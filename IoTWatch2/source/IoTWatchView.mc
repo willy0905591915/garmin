@@ -1,127 +1,72 @@
-    using Toybox.WatchUi;
-    using Toybox.Communications as Comm;
-    using Toybox.Sensor;
-    using Toybox.Graphics;
-    using Toybox.System;
-    using Toybox.Lang;
-    using Toybox.Time.Gregorian;
-    using Toybox.Sensor;
-    using Toybox.Application;
-    using Toybox.Position;
-    using Toybox.Timer;
+using Toybox.WatchUi;
+using Toybox.Sensor;
+using Toybox.System;
 
-    class IoTWatchView extends WatchUi.View {
-        var dataTimer = new Timer.Timer();
-        var string_HR;
-        // Fill in this variable with your AWS API Gateway endpoint
-        var url = "https://w66efzraph.execute-api.us-east-1.amazonaws.com/prod/watchdata";
-        var timer = 100; // in ms
-        
-        function initialize() {
-            View.initialize();
-            // Set up a timer
-            dataTimer.start(method(:timerCallback), timer, true);
-        }
-        
-        function timerCallback() {
-            var sensorInfo = Sensor.getInfo();
-            var positionInfo = Position.getInfo();
-            var xAccel = 0;
-            var yAccel = 0;
-            var zAccel = 0;
-            var hR = 0;
-            var heading = 0;
-            var speed = 0;
-            var latitude = 0;
-            var longitude = 0;
-        
-        //Collect Data
-        //Accelerometer
-        if (sensorInfo has :accel && sensorInfo.accel != null) {
-            var accel = sensorInfo.accel;
-            xAccel = accel[0];
-            yAccel = accel[1];
-            zAccel = accel[2];
-        }
-        else {
-            xAccel = 0;
-            yAccel = 0;
-            zAccel = 0;
-        }
-        //Heartrate
-        if (sensorInfo has :heartRate && sensorInfo.heartRate != null) {
-            hR = sensorInfo.heartRate;
-        }
-        else {
-            hR = 0;
-        }
-        //heading
-        if (sensorInfo has :heading && sensorInfo.heading != null) {
-            heading = sensorInfo.heading;
-        }
-        else {
-            heading = 0;
-        }
-        //Speed
-        if (sensorInfo has :speed && sensorInfo.speed != null) {
-            speed = sensorInfo.speed;
-        }
-        else {
-            speed = 0;
-        }
-        //Position
-        if (positionInfo has :position && positionInfo.position != null) {
-            var location = positionInfo.position.toDegrees();
-            latitude = location[0];
-            longitude = location[1];
-        }
-        else {
-            latitude = 0;
-            longitude = 0;
+class IoTWatchView extends WatchUi.View {
 
-        }
-
-        //Send the data to the REST API
-
-        var params = {
-            "heartRate" => hR.toNumber(),
-            "xAccel" => xAccel.toNumber(),
-            "yAccel" => yAccel.toNumber(),
-            "zAccel" => zAccel.toNumber(),
-            "heading" => heading.toFloat(),
-            "speed" => speed.toFloat(),
-            "latitude" => latitude.toFloat(),
-            "longitude" => longitude.toFloat()
-        };
-        var headers = {
-            "Content-Type" => Communications.REQUEST_CONTENT_TYPE_JSON
-        };
-        var options = {
-            :headers => headers,
-            :method => Communications.HTTP_REQUEST_METHOD_POST,
-            :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
-        };
-        Communications.makeWebRequest(url, params, options, method(:onReceive));
+    function initialize() {
+        View.initialize();
+        enableAccel();
     }
-        
-        function onReceive(responseCode as Lang.Number, data as Lang.Dictionary or Lang.String or Null) as Void{
+
+    // Initializes the view and registers for accelerometer data
+    function enableAccel() {
+        var maxSampleRate = 25;
+        System.println("Sample Rate: " + maxSampleRate);
+
+        // Unregister any existing listeners to avoid conflicts
+        try {
+            Sensor.unregisterSensorDataListener();
+        } catch(e) {
+            System.println("Error while unregistering sensor listener: " + e.getErrorMessage());
         }
 
-        // Load your resources here
-        function onLayout(dc) {
-            setLayout(Rez.Layouts.MainLayout(dc));
+        // Initialize accelerometer to request the maximum amount of data possible
+        var options = { 
+            :period => 1, 
+            :accelerometer => {
+                :enabled => true,       // Enable the accelerometer
+                :sampleRate => maxSampleRate       // 25 samples
+            }
+        };
+        try {
+            Sensor.registerSensorDataListener(method(:accelHistoryCallback), options);
+        } catch(e) {
+            System.println("Error: " + e.getErrorMessage());
         }
+    }
 
-        function onShow() {
+    function accelHistoryCallback(sensorData as Sensor.SensorData) as Void {
+        if (sensorData != null) {
+            var accelData = sensorData.accelerometerData;
+            System.println("Accel Data: X=" + accelData.x + ", Y=" + accelData.y + ", Z=" + accelData.z);
+        } else {
+            System.println("No accelerometer data available");
         }
+    }
 
-        // Update the view
-        function onUpdate(dc) {
+    // Load your resources here
+    function onLayout(dc) {
+        setLayout(Rez.Layouts.MainLayout(dc));
+    }
+
+    function onShow() {
+    }
+
+    // Update the view
+    function onUpdate(dc) {
         View.onUpdate(dc);
-            
-        }
-
-        function onHide() {
-        }
-
     }
+
+    function onHide() {
+        disableAccel();
+    }
+
+    public function disableAccel() as Void {
+        try {
+            Sensor.unregisterSensorDataListener();
+        } catch(e) {
+            System.println("Error while unregistering sensor listener: " + e.getErrorMessage());
+        }
+    }
+}
