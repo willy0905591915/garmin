@@ -15,7 +15,7 @@
         var string_HR;
         // Fill in this variable with your AWS API Gateway endpoint
         var url = "https://w66efzraph.execute-api.us-east-1.amazonaws.com/prod/watchdata";
-        var timer = 100; // in ms
+        var timer = 1000; // in ms
         
         function initialize() {
             View.initialize();
@@ -82,7 +82,7 @@
         }
 
         //Send the data to the REST API
-
+        
         var params = {
             "heartRate" => hR.toNumber(),
             "xAccel" => xAccel.toNumber(),
@@ -93,6 +93,12 @@
             "latitude" => latitude.toFloat(),
             "longitude" => longitude.toFloat()
         };
+
+        // set a variable to record time and print the time and collected data in log for debugging
+        var currentTime = System.getClockTime();
+        System.println("Collected data at: " + currentTime.hour.format("%02d") + ":" + currentTime.min.format("%02d") + ":" + currentTime.sec.format("%02d"));
+        System.println("Collected data: " + params);
+
         var headers = {
             "Content-Type" => Communications.REQUEST_CONTENT_TYPE_JSON
         };
