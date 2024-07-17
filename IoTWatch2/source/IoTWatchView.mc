@@ -1,91 +1,105 @@
 using Toybox.WatchUi;
 using Toybox.Sensor;
 using Toybox.System;
+using Toybox.Communications as Comm;
+using Toybox.Lang;
 
 class IoTWatchView extends WatchUi.View {
-    var accel_x = null;
-    var accel_y = null;
-    var accel_z = null;
+    var accel_x = [0];
+    var accel_y = [0];
+    var accel_z = [0];
+    var heartBeatIntervals = [0];
+    var url = "https://w66efzraph.execute-api.us-east-1.amazonaws.com/prod/watchdata";
 
-    function initialize() {
+
+    public function initialize() {
         View.initialize();
-        enableAccel();
+        onStart();
+    }
+
+    // start
+    public function onStart() as Void {
+        // initialize accelerometer
+        var options = {:period => 1, 
+            :accelerometer => {:enabled => true, :sampleRate => 25},
+            :heartBeatIntervals => {:enabled => true} 
+            };
+        try {
+            Sensor.registerSensorDataListener(method(:accelCallback), options);
+            
+        } catch(e) {
+            System.println(e.getErrorMessage());
+        }
+    }
+
+    public function onStop() as Void {
+        Sensor.unregisterSensorDataListener();
     }
 
     // Initializes the view and registers for accelerometer data
-    function enableAccel() {
-        var maxSampleRate = 25;
-        System.println("Sample Rate: " + maxSampleRate);
-
-        // Unregister any existing listeners to avoid conflicts
-        try {
-            Sensor.unregisterSensorDataListener();
-        } catch(e) {
-            System.println("Error while unregistering sensor listener: " + e.getErrorMessage());
-        }
-
-        // Initialize accelerometer to request the maximum amount of data possible
-        var options = { 
-            :period => 1, 
-            :accelerometer => {
-                :enabled => true,       // Enable the accelerometer
-                :sampleRate => maxSampleRate       // 25 samples
-            }
-        };
-        try {
-            Sensor.registerSensorDataListener(method(:accelHistoryCallback), options);
-        } catch(e) {
-            System.println("Error: " + e.getErrorMessage());
-        }
-    }
-
-    function accelHistoryCallback(sensorData as Sensor.SensorData) as Void {
-        if (sensorData != null) {
-            var accelData = sensorData.accelerometerData;
+    public function accelCallback(sensorData as SensorData) as Void {
+        var accelData = sensorData.accelerometerData;
+        var HRData = sensorData.heartRateData;
+        if (accelData != null) {
             accel_x = accelData.x;
             accel_y = accelData.y;
             accel_z = accelData.z;
+            heartBeatIntervals = HRData.heartBeatIntervals;
             onAccelData();
-        } else {
-            System.println("No accelerometer data available");
         }
     }
 
-    function onAccelData() as Void{
+    public function onAccelData() as Void{
         var cur_acc_x = 0;      
         var cur_acc_y = 0;
         var cur_acc_z = 0;
+        var cur_HR = 0;
         for (var i = 0; i < accel_x.size(); ++i) {
             cur_acc_x = accel_x[i];
             cur_acc_y = accel_y[i];
             cur_acc_z = accel_z[i];
+            cur_HR = heartBeatIntervals[i];
+            // print for logging
             System.println("accel_x: " + cur_acc_x.toString() + 
             "accel_y: " + cur_acc_y.toString() + "accel_z: " + cur_acc_z.toString());
+            System.println("HR: " + cur_HR.toString());
+            // Send data to REST API
+            var params = {
+                "heartRate" => cur_HR.toNumber(),
+                "xAccel" => cur_acc_x.toNumber(),
+                "yAccel" => cur_acc_y.toNumber(),
+                "zAccel" => cur_acc_z.toNumber(),
+            };
+
+            var headers = {
+                "Content-Type" => Communications.REQUEST_CONTENT_TYPE_JSON
+            };
+            var options = {
+                :headers => headers,
+                :method => Communications.HTTP_REQUEST_METHOD_POST,
+                :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
+            };
+            Communications.makeWebRequest(url, params, options, method(:onReceive));
         }
+    }
+
+    public function onReceive(responseCode as Lang.Number, data as Lang.Dictionary or Lang.String or Null) as Void{
     }
 
     // Load your resources here
-    function onLayout(dc) {
+    public function onLayout(dc) {
         setLayout(Rez.Layouts.MainLayout(dc));
     }
 
-    function onShow() {
+    public function onShow() {
     }
 
     // Update the view
-    function onUpdate(dc) {
+    public function onUpdate(dc) {
         View.onUpdate(dc);
     }
 
-    function onHide() {
-        disableAccel();
-    }
-
-    public function disableAccel() as Void {
-        try {
-            Sensor.unregisterSensorDataListener();
-        } catch(e) {
-            System.println("Error while unregistering sensor listener: " + e.getErrorMessage());
-        }
+    public function onHide() {
+        onStop();
     }
 }
