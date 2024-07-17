@@ -3,6 +3,9 @@ using Toybox.Sensor;
 using Toybox.System;
 
 class IoTWatchView extends WatchUi.View {
+    var accel_x = null;
+    var accel_y = null;
+    var accel_z = null;
 
     function initialize() {
         View.initialize();
@@ -39,9 +42,25 @@ class IoTWatchView extends WatchUi.View {
     function accelHistoryCallback(sensorData as Sensor.SensorData) as Void {
         if (sensorData != null) {
             var accelData = sensorData.accelerometerData;
-            System.println("Accel Data: X=" + accelData.x + ", Y=" + accelData.y + ", Z=" + accelData.z);
+            accel_x = accelData.x;
+            accel_y = accelData.y;
+            accel_z = accelData.z;
+            onAccelData();
         } else {
             System.println("No accelerometer data available");
+        }
+    }
+
+    function onAccelData() as Void{
+        var cur_acc_x = 0;      
+        var cur_acc_y = 0;
+        var cur_acc_z = 0;
+        for (var i = 0; i < accel_x.size(); ++i) {
+            cur_acc_x = accel_x[i];
+            cur_acc_y = accel_y[i];
+            cur_acc_z = accel_z[i];
+            System.println("accel_x: " + cur_acc_x.toString() + 
+            "accel_y: " + cur_acc_y.toString() + "accel_z: " + cur_acc_z.toString());
         }
     }
 
