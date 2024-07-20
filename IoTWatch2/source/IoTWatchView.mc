@@ -10,6 +10,7 @@ class IoTWatchView extends WatchUi.View {
     var accel_z = [0];
     var heartBeatIntervals = [0];
     var url = "https://w66efzraph.execute-api.us-east-1.amazonaws.com/prod/watchdata";
+    var unitId = System.getDeviceSettings().uniqueIdentifier;
 
 
     public function initialize() {
@@ -37,16 +38,19 @@ class IoTWatchView extends WatchUi.View {
     }
 
     // Initializes the view and registers for accelerometer data
-    public function accelCallback(sensorData as SensorData) as Void {
-        var accelData = sensorData.accelerometerData;
-        var HRData = sensorData.heartRateData;
-        if (accelData != null) {
+    public function accelCallback(sensorData as Sensor.SensorData) as Void {
+        if (sensorData has :accelerometerData) {
+            var accelData = sensorData.accelerometerData;
             accel_x = accelData.x;
             accel_y = accelData.y;
             accel_z = accelData.z;
-            heartBeatIntervals = HRData.heartBeatIntervals;
-            onAccelData();
         }
+        // if (sensorData has :heartRateData) {
+        //     var hrData = sensorData.heartRateData;
+        //     heartBeatIntervals = hrData.heartBeatIntervals;
+        // }
+
+        onAccelData();
     }
 
     public function onAccelData() as Void{
@@ -58,18 +62,20 @@ class IoTWatchView extends WatchUi.View {
             cur_acc_x = accel_x[i];
             cur_acc_y = accel_y[i];
             cur_acc_z = accel_z[i];
-            cur_HR = heartBeatIntervals[i];
+            // cur_HR = heartBeatIntervals[i];
             // print for logging
             System.println("accel_x: " + cur_acc_x.toString() + 
             "accel_y: " + cur_acc_y.toString() + "accel_z: " + cur_acc_z.toString());
-            System.println("HR: " + cur_HR.toString());
+            System.println("unitID: " + unitId);
+            // System.println("HR: " + cur_HR.toString());
             // Send data to REST API
             var params = {
-                "heartRate" => cur_HR.toNumber(),
+                // "heartRate" => cur_HR.toNumber(),
                 "xAccel" => cur_acc_x.toNumber(),
                 "yAccel" => cur_acc_y.toNumber(),
                 "zAccel" => cur_acc_z.toNumber(),
-            };
+                "unitID" => unitId
+            }; 
 
             var headers = {
                 "Content-Type" => Communications.REQUEST_CONTENT_TYPE_JSON
