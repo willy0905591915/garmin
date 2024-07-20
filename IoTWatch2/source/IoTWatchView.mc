@@ -12,7 +12,7 @@
 
     class IoTWatchView extends WatchUi.View {
         var dataTimer = new Timer.Timer();
-        var string_HR;
+        var unitId = System.getDeviceSettings().uniqueIdentifier;
         // Fill in this variable with your AWS API Gateway endpoint
         var url = "https://w66efzraph.execute-api.us-east-1.amazonaws.com/prod/watchdata";
         var timer = 1000; // in ms
@@ -91,7 +91,8 @@
             "heading" => heading.toFloat(),
             "speed" => speed.toFloat(),
             "latitude" => latitude.toFloat(),
-            "longitude" => longitude.toFloat()
+            "longitude" => longitude.toFloat(),
+            "unitID" => unitId
         };
 
         // set a variable to record time and print the time and collected data in log for debugging
