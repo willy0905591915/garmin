@@ -1,4 +1,4 @@
 <layout id="MainLayout">
     <drawable id="mainbg" />
-    <bitmap id="id_monkey" x="center" y="center" filename="../drawables/itri240.png" />
+    <bitmap id="id_monkey" x="center" y="center" filename="../drawables/itri320x360.png" />
 </layout>
