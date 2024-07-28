@@ -5,6 +5,7 @@ using Toybox.Communications as Comm;
 using Toybox.Lang;
 using Toybox.Timer;
 using Toybox.Position;
+import Toybox.Graphics;
 
 
 class IoTWatchView extends WatchUi.View {
@@ -19,11 +20,14 @@ class IoTWatchView extends WatchUi.View {
     var dataBatch = [];
     var sendTimer = new Timer.Timer();
     var sensorTimer = new Timer.Timer();
-
+    private var _UUID as Lang.String;
+    public var phone = System.getDeviceSettings().phoneConnected;
 
     public function initialize() {
         View.initialize();
+        System.println("phone connected: " + phone);
         onStart();
+        _UUID = unitId.toString();
         sendTimer.start(method(:sendDataBatch), 1000, true);
         sensorTimer.start(method(:updateSensorData), 1000, true);
     }
@@ -141,7 +145,32 @@ class IoTWatchView extends WatchUi.View {
 
     // Update the view
     public function onUpdate(dc) {
-        View.onUpdate(dc);
+        // Set background color
+        dc.setColor(Graphics.COLOR_TRANSPARENT, Graphics.COLOR_BLACK);
+        dc.clear();
+        dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        
+        var x = dc.getWidth() / 2;
+        var y = dc.getHeight() / 2;
+        
+        var font = Graphics.FONT_XTINY;
+        var textHeight = dc.getFontHeight(font);
+
+        if (phone == true) {
+            dc.drawText(x, 0, Graphics.FONT_SMALL, "Phone connected", Graphics.TEXT_JUSTIFY_CENTER);
+        } else {
+            dc.drawText(x, 0, Graphics.FONT_SMALL, "Phone disconnected", Graphics.TEXT_JUSTIFY_CENTER);
+        }
+        y += textHeight;
+        
+        var _UUID1 = _UUID.substring(0,20);
+        var _UUID2 = _UUID.substring(20,40);
+        dc.drawText(x, y, Graphics.FONT_SMALL, "UUID:", Graphics.TEXT_JUSTIFY_CENTER);
+        y += textHeight;
+        dc.drawText(x, y, font, _UUID1, Graphics.TEXT_JUSTIFY_CENTER);
+        y += textHeight;
+        dc.drawText(x, y, font, _UUID2, Graphics.TEXT_JUSTIFY_CENTER);
+        // View.onUpdate(dc);
     }
 
     public function onHide() {

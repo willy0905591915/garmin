@@ -39,7 +39,9 @@ module Rez {
             var rez_cmp_local_bitmap_id_monkey = new WatchUi.Bitmap({:identifier=>"id_monkey", :rezId=>$.Rez.Drawables.id_monkey, :locX=>WatchUi.LAYOUT_HALIGN_CENTER, :locY=>WatchUi.LAYOUT_VALIGN_CENTER});
             rez_cmp_local_bitmap_id_monkey.setLocation(((320 - rez_cmp_local_bitmap_id_monkey.width) * 0.5), ((360 - rez_cmp_local_bitmap_id_monkey.height) * 0.5));
 
-            return [rez_cmp_local_custom_drawable_mainbg, rez_cmp_local_bitmap_id_monkey] as Array<WatchUi.Drawable>;
+            var rez_cmp_local_text_id_UUID = new WatchUi.Text({:identifier=>"id_UUID", :color=>Graphics.COLOR_WHITE, :locX=>(320 * 0.5), :locY=>360 / 3, :justification=>Graphics.TEXT_JUSTIFY_CENTER|Graphics.TEXT_JUSTIFY_VCENTER, :font=>Graphics.FONT_MEDIUM});
+
+            return [rez_cmp_local_custom_drawable_mainbg, rez_cmp_local_bitmap_id_monkey, rez_cmp_local_text_id_UUID] as Array<WatchUi.Drawable>;
         }
     } // Layouts
 
