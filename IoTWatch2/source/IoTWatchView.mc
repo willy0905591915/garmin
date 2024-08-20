@@ -6,6 +6,8 @@ using Toybox.Lang;
 using Toybox.Timer;
 using Toybox.Position;
 import Toybox.Graphics;
+using Toybox.ActivityRecording;
+using Toybox.Math;
 
 
 class IoTWatchView extends WatchUi.View {
@@ -15,13 +17,23 @@ class IoTWatchView extends WatchUi.View {
     var heartRate = 0;
     var latitude = 0;
     var longitude = 0;
-    var url = "https://w66efzraph.execute-api.us-east-1.amazonaws.com/prod/watchdata";
+    var prev_accel_x = 0.0;
+    var prev_accel_y = 0.0;
+    var prev_accel_z = 0.0;
+    var playerLoad = 0.0;
+    var cadence = 0;
+    var numericUnitId = 0;
+    var url = "https://bvt4m4utok.execute-api.us-east-1.amazonaws.com/stage1/watchdata";
     var unitId = System.getDeviceSettings().uniqueIdentifier;
     var dataBatch = [];
     var sendTimer = new Timer.Timer();
     var sensorTimer = new Timer.Timer();
     private var _UUID as Lang.String;
     public var phone = System.getDeviceSettings().phoneConnected;
+    var session = null;
+    private var fitField;
+    private var fitFieldPlayerLoad, fitFieldCadence, fitFieldHeartRate, 
+                fitFieldLatitude, fitFieldLongitude, fitFieldUnitID;
 
     public function initialize() {
         View.initialize();
@@ -30,11 +42,46 @@ class IoTWatchView extends WatchUi.View {
         _UUID = unitId.toString();
         sendTimer.start(method(:sendDataBatch), 1000, true);
         sensorTimer.start(method(:updateSensorData), 1000, true);
+        if (Toybox has :ActivityRecording) {
+
+            session = ActivityRecording.createSession({          // set up recording session
+                :name=>"IoT Data Collection",                              // set session name
+                :sport=> Activity.SPORT_GENERIC,                // set sport type
+                :subSport=> Activity.SUB_SPORT_GENERIC         // set sub sport type
+           });
+
+            // session.setActivityType(customSport);
+            // session.enableSensorEvents({"accelerometer" => true, "heartRate" => true});
+
+
+            // Create custom FIT fields using MESG_TYPE_DEVELOPER
+        // fitFieldXAccel = session.createField("X Acceleration", 0, FitContributor.DATA_TYPE_FLOAT, 
+        //     {:mesgType => FitContributor.MESG_TYPE_RECORD, :units => "m/s^2"});
+        // fitFieldYAccel = session.createField("Y Acceleration", 1, FitContributor.DATA_TYPE_FLOAT, 
+        //     {:mesgType => FitContributor.MESG_TYPE_RECORD, :units => "m/s^2"});
+        // fitFieldZAccel = session.createField("Z Acceleration", 2, FitContributor.DATA_TYPE_FLOAT, 
+        //     {:mesgType => FitContributor.MESG_TYPE_RECORD, :units => "m/s^2"});
+        fitFieldPlayerLoad = session.createField("Player Load", 0, FitContributor.DATA_TYPE_FLOAT, 
+            {:mesgType => FitContributor.MESG_TYPE_RECORD, :units => "au"});
+        fitFieldHeartRate = session.createField("Heart Rate", 1, FitContributor.DATA_TYPE_UINT8, 
+            {:mesgType => FitContributor.MESG_TYPE_RECORD, :units => "bpm"});
+        fitFieldLatitude = session.createField("Latitude", 2, FitContributor.DATA_TYPE_FLOAT, 
+            {:mesgType => FitContributor.MESG_TYPE_RECORD, :units => "degrees"});
+        fitFieldLongitude = session.createField("Longitude", 3, FitContributor.DATA_TYPE_FLOAT, 
+            {:mesgType => FitContributor.MESG_TYPE_RECORD, :units => "degrees"});
+        fitFieldUnitID = session.createField("Unit ID", 4, FitContributor.DATA_TYPE_UINT32, 
+            {:mesgType => FitContributor.MESG_TYPE_RECORD});
+        fitFieldCadence = session.createField("Cadence", 5, FitContributor.DATA_TYPE_UINT16, 
+            {:mesgType => FitContributor.MESG_TYPE_RECORD, :units => "rpm"});
+        
+
+            session.start();                          
+        }
     }
 
     // start
     public function onStart() as Void {
-        // initialize accelerometer
+        // initialize accelerometer 
         var options = {
             :period => 1, 
             :accelerometer => {:enabled => true, :sampleRate => 25},
@@ -51,6 +98,11 @@ class IoTWatchView extends WatchUi.View {
 
     public function onStop() as Void {
         Sensor.unregisterSensorDataListener();
+        if (session != null) {
+            session.stop();
+            session.save();
+            session = null;
+        }
     }
 
     // Initializes the view and registers for accelerometer data
@@ -60,8 +112,39 @@ class IoTWatchView extends WatchUi.View {
             accel_x = accelData.x;
             accel_y = accelData.y;
             accel_z = accelData.z;
+            System.println("accel_x: " + accel_x.toString());
+            System.println("accel_y: " + accel_y.toString());
+            System.println("accel_z: " + accel_z.toString());
+            calculatePlayerLoad();
         }
-        collectData();
+    }
+
+    public function calculatePlayerLoad() as Void {
+        prev_accel_x = 0.0;
+        prev_accel_y = 0.0;
+        prev_accel_z = 0.0;
+        playerLoad = 0.0;
+        var sampleCount = 0;
+        for (var i = 0; i < accel_x.size(); i++) {
+            var dx = accel_x[i] - prev_accel_x;
+            var dy = accel_y[i] - prev_accel_y;
+            var dz = accel_z[i] - prev_accel_z;
+            
+            var load = Math.sqrt(dx * dx + dy * dy + dz * dz);
+            playerLoad += load;
+            
+            prev_accel_x = accel_x[i];
+            prev_accel_y = accel_y[i];
+            prev_accel_z = accel_z[i];
+            
+            sampleCount++;
+            
+            if (sampleCount == 25) {
+                collectData();
+                playerLoad = 0.0;
+                sampleCount = 0;
+            }
+    }
     }
 
     // Update heart rate, latitude, and longitude every second
@@ -73,43 +156,108 @@ class IoTWatchView extends WatchUi.View {
                 System.println("heartRate is null");
             }
         }
-        
-        var positionInfo = Position.getInfo();
-        if (positionInfo has :position) {
-            var location = positionInfo.position.toDegrees();
+
+        // Request a position update
+        Position.enableLocationEvents(Position.LOCATION_CONTINUOUS, method(:onPosition));
+    }
+
+    // Callback function for position updates
+    public function onPosition(info as Position.Info) as Void {
+        if (info has :position && info.position != null) {
+            var location = info.position.toDegrees();
             latitude = location[0];
             longitude = location[1];
         }
     }
 
-    public function collectData() as Void{
-        var cur_acc_x = 0;      
-        var cur_acc_y = 0;
-        var cur_acc_z = 0;
 
-        for (var i = 0; i < accel_x.size(); ++i) {
-            cur_acc_x = accel_x[i];
-            cur_acc_y = accel_y[i];
-            cur_acc_z = accel_z[i];
+    // public function collectData() as Void{
+    //     var cur_acc_x = 0;      
+    //     var cur_acc_y = 0;
+    //     var cur_acc_z = 0;
 
-            var data = {
-                "xAccel" => cur_acc_x.toNumber(),
-                "yAccel" => cur_acc_y.toNumber(),
-                "zAccel" => cur_acc_z.toNumber(),
-                "heartRate" => heartRate,
-                "latitude" => latitude,
-                "longitude" => longitude,
-                "unitID" => unitId
-            }; 
-            dataBatch.add(data);
+    //     for (var i = 0; i < accel_x.size(); ++i) {
+    //         cur_acc_x = accel_x[i];
+    //         cur_acc_y = accel_y[i];
+    //         cur_acc_z = accel_z[i];
 
-            // Log the data for debugging
-            System.println("Collected Data: " + data.toString());
+    //         var data = {
+    //             "xAccel" => cur_acc_x.toNumber(),
+    //             "yAccel" => cur_acc_y.toNumber(),
+    //             "zAccel" => cur_acc_z.toNumber(),
+    //             "heartRate" => heartRate,
+    //             "latitude" => latitude,
+    //             "longitude" => longitude,
+    //             "unitID" => unitId
+    //         }; 
+    //         dataBatch.add(data);
+
+    //         // Log the data for debugging
+    //         System.println("Collected Data: " + data.toString());
+
+    //         // Write data to FIT file
+    //         if (session != null) {
+    //             fitFieldXAccel.setData(cur_acc_x);
+    //             fitFieldYAccel.setData(cur_acc_y);
+    //             fitFieldZAccel.setData(cur_acc_z);
+    //             fitFieldHeartRate.setData(heartRate);
+    //             fitFieldLatitude.setData(latitude);
+    //             fitFieldLongitude.setData(longitude);
+    //             fitFieldUnitID.setData(unitId);
+    //             System.println("Successfully wrote data to FIT file");
+    //         } else {
+    //             System.println("Session is null, cannot write to FIT file");
+    //         }
+    //     }
+    // }
+    public function collectData() as Void {
+        numericUnitId = removeAlphabets(unitId.toString());
+
+        var data = {
+            "playerLoad" => playerLoad,
+            "heartRate" => heartRate,
+            "latitude" => latitude,
+            "longitude" => longitude,
+            "unitID" => numericUnitId,
+            "cadence" => cadence
+        }; 
+        dataBatch.add(data);
+
+        System.println("Collected Data: " + data.toString());
+
+        if (session != null) {
+            fitFieldPlayerLoad.setData(playerLoad);
+            fitFieldHeartRate.setData(heartRate);
+            fitFieldLatitude.setData(latitude);
+            fitFieldLongitude.setData(longitude);
+            fitFieldUnitID.setData(numericUnitId); // Convert Long to Number
+            fitFieldCadence.setData(cadence);
+            System.println("Successfully wrote data to FIT file");
+        } else {
+            System.println("Session is null, cannot write to FIT file");
         }
+    }
+
+    // Function to remove alphabets from unitId
+    public function removeAlphabets(str) {
+        var result = 0;
+        var numericChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        for (var i = 0; i < str.length(); i++) {
+            var char = str.substring(i, i+1);
+            if (numericChars.indexOf(char) != -1) {
+                result = (result * 10) + char.toNumber();
+            }
+        }
+        if (result < 0) {
+            result *= -1;
+        }
+        System.println("result: " + result);
+        return result;
     }
 
     public function sendDataBatch() as Void {
         if (dataBatch.size() > 0) {
+            System.println("Sending data batch. Size: " + dataBatch.size());
             var params = {
                 "dataBatch" => dataBatch
             };
@@ -122,16 +270,23 @@ class IoTWatchView extends WatchUi.View {
                 :method => Communications.HTTP_REQUEST_METHOD_POST,
                 :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON
             };
+            System.println("Making web request to: " + url);
             Communications.makeWebRequest(url, params, options, method(:onReceive));
             dataBatch = [];
+        } else {
+            System.println("No data to send");
         }
     }
 
-    public function onReceive(responseCode as Lang.Number, data as Lang.Dictionary or Lang.String or Null) as Void{
+    public function onReceive(responseCode as Lang.Number, data as Lang.Dictionary or Lang.String or Null) as Void {
+        System.println("Received response. Code: " + responseCode);
         if (responseCode == 200) {
             System.println("Batch data sent successfully.");
         } else {
             System.println("Failed to send batch data. Response code: " + responseCode.toString());
+            if (data != null) {
+                System.println("Response data: " + data.toString());
+            }
         }
     }
 
@@ -163,13 +318,26 @@ class IoTWatchView extends WatchUi.View {
         }
         y += textHeight;
         
-        var _UUID1 = _UUID.substring(0,20);
-        var _UUID2 = _UUID.substring(20,40);
+        // var _UUID1 = _UUID.substring(0,20);
+        // var _UUID2 = _UUID.substring(20,40);
+        var str = unitId;
+        var result = 0;
+        var numericChars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        for (var i = 0; i < str.length(); i++) {
+            var char = str.substring(i, i+1);
+            if (numericChars.indexOf(char) != -1) {
+                result = (result * 10) + char.toNumber();
+            }
+        }
+        if (result < 0) {
+            result *= -1;
+        }
+
         dc.drawText(x, y, Graphics.FONT_SMALL, "UUID:", Graphics.TEXT_JUSTIFY_CENTER);
         y += textHeight;
-        dc.drawText(x, y, font, _UUID1, Graphics.TEXT_JUSTIFY_CENTER);
-        y += textHeight;
-        dc.drawText(x, y, font, _UUID2, Graphics.TEXT_JUSTIFY_CENTER);
+        dc.drawText(x, y, font, result, Graphics.TEXT_JUSTIFY_CENTER);
+        // y += textHeight;
+        // dc.drawText(x, y, font, _UUID2, Graphics.TEXT_JUSTIFY_CENTER);
         // View.onUpdate(dc);
     }
 

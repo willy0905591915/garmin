@@ -7,9 +7,23 @@
         </iq:products>
         <iq:permissions>
             <iq:uses-permission id="Communications"/>
+            <iq:uses-permission id="Fit"/>
+            <iq:uses-permission id="FitContributor"/>
             <iq:uses-permission id="Positioning"/>
             <iq:uses-permission id="Sensor"/>
         </iq:permissions>
+        <!-- <fitContributions>
+            <fitField id="0" sortOrder = "0" chartTitle="X-Accel" dataLabel="X-Accel"
+                unitLabel="millig-units" fillColor="#FF0000"/>
+            <fitField id="1" sortOrder = "1" chartTitle="Y-Accel" dataLabel="Y-Accel"
+                unitLabel="millig-units" fillColor="#FF0000"/>
+            <fitField id="2" sortOrder = "2" chartTitle="Z-Accel" dataLabel="Z-Accel"
+                unitLabel="millig-units" fillColor="#FF0000"/>
+            <fitField id="3" sortOrder = "3"/>
+            <fitField id="4" sortOrder = "4"/>
+            <fitField id="5" sortOrder = "5"/>
+            <fitField id="6" sortOrder = "6"/>
+        </fitContributions> -->
         <iq:languages>
             <iq:language>eng</iq:language>
         </iq:languages>
