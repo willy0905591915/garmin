@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchApp.mc" id="1" lineNum="6" parent="globals/IoTWatchApp" pc="268435456" symbol="initialize"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchApp.mc" id="1" lineNum="7" parent="globals/IoTWatchApp" pc="268435460" symbol="initialize"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchApp.mc" id="2" lineNum="11" parent="globals/IoTWatchApp" pc="268435479" symbol="onStart"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchApp.mc" id="3" lineNum="15" parent="globals/IoTWatchApp" pc="268435484" symbol="onStop"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchApp.mc" id="4" lineNum="19" parent="globals/IoTWatchApp" pc="268435489" symbol="getInitialView"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchApp.mc" id="4" lineNum="20" parent="globals/IoTWatchApp" pc="268435493" symbol="getInitialView"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchApp.mc" id="5" lineNum="4" parent="globals/IoTWatchApp" pc="268436842" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchApp.mc" id="5" lineNum="4" parent="globals/IoTWatchApp" pc="268436842" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="7" lineNum="21" parent="globals/IoTWatchView" pc="268435531" symbol="initialize"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="7" lineNum="22" parent="globals/IoTWatchView" pc="268435535" symbol="initialize"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="7" lineNum="24" parent="globals/IoTWatchView" pc="268435553" symbol="initialize"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="27" parent="globals/IoTWatchView" pc="268435598" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="28" parent="globals/IoTWatchView" pc="268435602" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="29" parent="globals/IoTWatchView" pc="268435619" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="30" parent="globals/IoTWatchView" pc="268435636" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="31" parent="globals/IoTWatchView" pc="268435643" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="32" parent="globals/IoTWatchView" pc="268435650" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="33" parent="globals/IoTWatchView" pc="268435657" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="34" parent="globals/IoTWatchView" pc="268435664" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="35" parent="globals/IoTWatchView" pc="268435671" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="36" parent="globals/IoTWatchView" pc="268435678" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="37" parent="globals/IoTWatchView" pc="268435685" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="41" parent="globals/IoTWatchView" pc="268435692" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="42" parent="globals/IoTWatchView" pc="268435719" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="43" parent="globals/IoTWatchView" pc="268435729" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="44" parent="globals/IoTWatchView" pc="268435739" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="45" parent="globals/IoTWatchView" pc="268435749" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="48" parent="globals/IoTWatchView" pc="268435762" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="49" parent="globals/IoTWatchView" pc="268435769" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="50" parent="globals/IoTWatchView" pc="268435776" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="53" parent="globals/IoTWatchView" pc="268435783" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="54" parent="globals/IoTWatchView" pc="268435810" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="57" parent="globals/IoTWatchView" pc="268435823" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="60" parent="globals/IoTWatchView" pc="268435830" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="61" parent="globals/IoTWatchView" pc="268435857" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="64" parent="globals/IoTWatchView" pc="268435870" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="67" parent="globals/IoTWatchView" pc="268435877" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="68" parent="globals/IoTWatchView" pc="268435904" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="71" parent="globals/IoTWatchView" pc="268435917" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="74" parent="globals/IoTWatchView" pc="268435924" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="75" parent="globals/IoTWatchView" pc="268435951" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="76" parent="globals/IoTWatchView" pc="268435970" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="77" parent="globals/IoTWatchView" pc="268435980" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="80" parent="globals/IoTWatchView" pc="268435993" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="81" parent="globals/IoTWatchView" pc="268436000" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="87" parent="globals/IoTWatchView" pc="268436007" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="96" parent="globals/IoTWatchView" pc="268436148" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="99" parent="globals/IoTWatchView" pc="268436178" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="8" lineNum="104" parent="globals/IoTWatchView" pc="268436240" symbol="timerCallback"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="9" lineNum="107" parent="globals/IoTWatchView" pc="268436287" symbol="onReceive"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="9" lineNum="108" parent="globals/IoTWatchView" pc="268436291" symbol="onReceive"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="9" lineNum="109" parent="globals/IoTWatchView" pc="268436315" symbol="onReceive"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="10" lineNum="113" parent="globals/IoTWatchView" pc="268436340" symbol="onLayout"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="10" lineNum="114" parent="globals/IoTWatchView" pc="268436344" symbol="onLayout"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="11" lineNum="117" parent="globals/IoTWatchView" pc="268436382" symbol="onShow"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="12" lineNum="121" parent="globals/IoTWatchView" pc="268436387" symbol="onUpdate"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="12" lineNum="122" parent="globals/IoTWatchView" pc="268436391" symbol="onUpdate"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="13" lineNum="125" parent="globals/IoTWatchView" pc="268436412" symbol="onHide"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="14" lineNum="13" parent="globals/IoTWatchView" pc="268436861" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="14" lineNum="14" parent="globals/IoTWatchView" pc="268436879" symbol="&lt;init&gt;"/>
+        <entry filename="D:\\Garmin\\ConnectIQ-Watch-IoT\\IoTWatch2\\source\\IoTWatchView.mc" id="14" lineNum="13" parent="globals/IoTWatchView" pc="268436861" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="16" lineNum="13" parent="globals/Rez/Drawables/mainbg" pc="268436417" symbol="initialize"/>
+        <entry filename="Rez" id="16" lineNum="14" parent="globals/Rez/Drawables/mainbg" pc="268436421" symbol="initialize"/>
+        <entry filename="Rez" id="17" lineNum="17" parent="globals/Rez/Drawables/mainbg" pc="268436446" symbol="draw"/>
+        <entry filename="Rez" id="17" lineNum="18" parent="globals/Rez/Drawables/mainbg" pc="268436450" symbol="draw"/>
+        <entry filename="Rez" id="17" lineNum="20" parent="globals/Rez/Drawables/mainbg" pc="268436479" symbol="draw"/>
+        <entry filename="Rez" id="18" lineNum="11" parent="globals/Rez/Drawables/mainbg" pc="268436818" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="18" lineNum="11" parent="globals/Rez/Drawables/mainbg" pc="268436818" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="19" lineNum="2" parent="globals/Rez/Drawables" pc="268436817" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="20" lineNum="27" parent="globals/Rez/Fonts" pc="268436838" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="21" lineNum="29" parent="globals/Rez/JsonData" pc="268436840" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="22" lineNum="38" parent="globals/Rez/Layouts" pc="268436512" symbol="MainLayout"/>
+        <entry filename="Rez" id="22" lineNum="40" parent="globals/Rez/Layouts" pc="268436524" symbol="MainLayout"/>
+        <entry filename="Rez" id="22" lineNum="41" parent="globals/Rez/Layouts" pc="268436564" symbol="MainLayout"/>
+        <entry filename="Rez" id="22" lineNum="42" parent="globals/Rez/Layouts" pc="268436577" symbol="MainLayout"/>
+        <entry filename="Rez" id="22" lineNum="44" parent="globals/Rez/Layouts" pc="268436593" symbol="MainLayout"/>
+        <entry filename="Rez" id="22" lineNum="45" parent="globals/Rez/Layouts" pc="268436712" symbol="MainLayout"/>
+        <entry filename="Rez" id="22" lineNum="47" parent="globals/Rez/Layouts" pc="268436764" symbol="MainLayout"/>
+        <entry filename="Rez" id="23" lineNum="31" parent="globals/Rez/Layouts" pc="268436839" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="24" lineNum="52" parent="globals/Rez/Menus" pc="268436837" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="25" lineNum="54" parent="globals/Rez/Strings" pc="268436841" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="26" lineNum="1" parent="globals/Rez" pc="268436793" symbol="&lt;init&gt;"/>
+        <entry filename="Rez" id="26" lineNum="1" parent="globals/Rez" pc="268436793" symbol="&lt;init&gt;"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="4" module="true" symbol="globals/Rez/Menus"/>
+        <entry id="16" method="true" symbol="MainLayout"/>
+        <entry field="true" id="20" symbol="url"/>
+        <entry field="true" id="22" symbol="timer"/>
+        <entry field="true" id="8389310" symbol="position"/>
+        <entry field="true" id="8389605" symbol="accel"/>
+        <entry id="8388924" module="true" symbol="Gregorian"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="17" symbol="AppName"/>
+        <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8389594" symbol="headers"/>
+        <entry id="8388772" module="true" object="true" symbol="Fonts"/>
+        <entry id="8389345" symbol="rezId"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry field="true" id="13" symbol="id_monkey"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry id="12" module="true" symbol="Menus"/>
+        <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
+        <entry id="15" object="true" symbol="mainbg"/>
+        <entry id="10" object="true" symbol="IoTWatchView"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="19" symbol="string_HR"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry field="true" id="21" symbol="sas"/>
+        <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="8389844" symbol="responseType"/>
+        <entry id="8388786" method="true" symbol="method"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry id="9" object="true" symbol="IoTWatchApp"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry id="24" method="true" symbol="onReceive"/>
+        <entry id="23" method="true" symbol="timerCallback"/>
+        <entry field="true" id="8388965" symbol="heading"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="8390088" module="true" object="true" symbol="JsonData"/>
+        <entry id="8389068" method="true" symbol="draw"/>
+        <entry field="true" id="14" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry id="8388643" module="true" symbol="Sensor"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry field="true" id="8388958" symbol="speed"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry field="true" id="8388960" symbol="heartRate"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="11" module="true" symbol="Layouts"/>
+        <entry id="8388642" module="true" symbol="Position"/>
+        <entry field="true" id="18" symbol="dataTimer"/>
+        <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435483" name="state" stackId="1" startPc="268435479"/>
+        <entry arg="true" endPc="268435488" name="state" stackId="1" startPc="268435484"/>
+        <entry endPc="268435758" name="accel" stackId="11" startPc="268435719"/>
+        <entry endPc="268435989" name="location" stackId="12" startPc="268435951"/>
+        <entry endPc="268436285" name="longitude" stackId="10" startPc="268435602"/>
+        <entry endPc="268436285" name="positionInfo" stackId="2" startPc="268435602"/>
+        <entry endPc="268436285" name="headers" stackId="14" startPc="268435602"/>
+        <entry endPc="268436285" name="sensorInfo" stackId="1" startPc="268435602"/>
+        <entry endPc="268436285" name="speed" stackId="8" startPc="268435602"/>
+        <entry endPc="268436285" name="hR" stackId="6" startPc="268435602"/>
+        <entry endPc="268436285" name="yAccel" stackId="4" startPc="268435602"/>
+        <entry endPc="268436285" name="params" stackId="13" startPc="268435602"/>
+        <entry endPc="268436285" name="zAccel" stackId="5" startPc="268435602"/>
+        <entry endPc="268436285" name="latitude" stackId="9" startPc="268435602"/>
+        <entry endPc="268436285" name="options" stackId="15" startPc="268435602"/>
+        <entry endPc="268436285" name="heading" stackId="7" startPc="268435602"/>
+        <entry endPc="268436285" name="xAccel" stackId="3" startPc="268435602"/>
+        <entry arg="true" endPc="268436339" name="responseCode" stackId="1" startPc="268436287"/>
+        <entry arg="true" endPc="268436339" name="data" stackId="2" startPc="268436287"/>
+        <entry arg="true" endPc="268436381" name="dc" stackId="1" startPc="268436340"/>
+        <entry arg="true" endPc="268436411" name="dc" stackId="1" startPc="268436387"/>
+        <entry arg="true" endPc="268436511" name="dc" stackId="1" startPc="268436446"/>
+        <entry endPc="268436790" name="rez_cmp_local_custom_drawable_mainbg" stackId="2" startPc="268436524"/>
+        <entry endPc="268436790" name="rez_cmp_local_bitmap_id_monkey" stackId="3" startPc="268436524"/>
+        <entry arg="true" endPc="268436791" name="dc" stackId="1" startPc="268436512"/>
+    </localVars>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="id_monkey"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="87" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/Rez" offset="150" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/Rez/Drawables" offset="229" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Drawables/mainbg" offset="284" parentId="Drawables" symbolId="mainbg" type="class"/>
+        <dataEntry label="globals/Rez/Menus" offset="339" parentId="Rez" symbolId="Menus" type="module"/>
+        <dataEntry label="globals/Rez/Fonts" offset="370" parentId="Rez" symbolId="Fonts" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="401" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/JsonData" offset="440" parentId="Rez" symbolId="JsonData" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="471" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/IoTWatchApp" offset="510" parentId="globals" symbolId="IoTWatchApp" type="class"/>
+        <dataEntry label="globals/IoTWatchView" offset="581" parentId="globals" symbolId="IoTWatchView" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435478" name="initialize" parent="IoTWatchApp" startPc="268435456">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435483" name="onStart" parent="IoTWatchApp" startPc="268435479">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435488" name="onStop" parent="IoTWatchApp" startPc="268435484">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435530" name="getInitialView" parent="IoTWatchApp" startPc="268435489">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436860" name="&lt;init&gt;" parent="IoTWatchApp" startPc="268436842">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435597" name="initialize" parent="IoTWatchView" startPc="268435531">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436286" name="timerCallback" parent="IoTWatchView" startPc="268435598">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436339" name="onReceive" parent="IoTWatchView" startPc="268436287">
+            <param id="responseCode"/>
+            <param id="data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436381" name="onLayout" parent="IoTWatchView" startPc="268436340">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436386" name="onShow" parent="IoTWatchView" startPc="268436382">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436411" name="onUpdate" parent="IoTWatchView" startPc="268436387">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436416" name="onHide" parent="IoTWatchView" startPc="268436412">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436913" name="&lt;init&gt;" parent="IoTWatchView" startPc="268436861">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436445" name="initialize" parent="mainbg" startPc="268436417">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436511" name="draw" parent="mainbg" startPc="268436446">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436836" name="&lt;init&gt;" parent="mainbg" startPc="268436818">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436817" name="&lt;init&gt;" parent="Drawables" startPc="268436817">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436838" name="&lt;init&gt;" parent="Fonts" startPc="268436838">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436840" name="&lt;init&gt;" parent="JsonData" startPc="268436840">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436791" name="MainLayout" parent="Layouts" startPc="268436512">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436839" name="&lt;init&gt;" parent="Layouts" startPc="268436839">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436837" name="&lt;init&gt;" parent="Menus" startPc="268436837">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436841" name="&lt;init&gt;" parent="Strings" startPc="268436841">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="protected" endPc="268436816" name="&lt;init&gt;" parent="Rez" startPc="268436793">
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

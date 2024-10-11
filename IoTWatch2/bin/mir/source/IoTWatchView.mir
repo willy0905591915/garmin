@@ -1,0 +1,766 @@
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 1; ]
+using Toybox.WatchUi;
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 2; ]
+using Toybox.Sensor;
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 3; ]
+using Toybox.System;
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 4; ]
+using Toybox.Communications as :Comm;
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 5; ]
+using Toybox.Lang;
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 6; ]
+using Toybox.Timer;
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 7; ]
+using Toybox.Position;
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 8; ]
+import Toybox.Graphics;
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 11; ]
+class IoTWatchView extends WatchUi.View{
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 11; ]
+    <init> {
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 12 8 ]
+        %tmp.1 = newa 1;
+        %tmp.2 = 0;
+        %tmp.3 = dup %tmp.1;
+        %tmp.4 = aputv %tmp.3 0 %tmp.2;
+        putv self :accel_x %tmp.4;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 13 8 ]
+        %tmp.5 = newa 1;
+        %tmp.6 = 0;
+        %tmp.7 = dup %tmp.5;
+        %tmp.8 = aputv %tmp.7 0 %tmp.6;
+        putv self :accel_y %tmp.8;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 14 8 ]
+        %tmp.9 = newa 1;
+        %tmp.10 = 0;
+        %tmp.11 = dup %tmp.9;
+        %tmp.12 = aputv %tmp.11 0 %tmp.10;
+        putv self :accel_z %tmp.12;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 19 8 ]
+        %tmp.13 = getm $.Toybox.System;
+        %tmp.14 = getv function %tmp.13 :getDeviceSettings;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        %tmp.16 = getv %tmp.15 :uniqueIdentifier;
+        putv self :unitId %tmp.16;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 20 8 ]
+        %tmp.17 = newa 0;
+        putv self :dataBatch %tmp.17;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 21 8 ]
+        %tmp.20 = getm $.Toybox.Timer;
+        %tmp.21 = getv function ? %tmp.20 :Timer;
+        %tmp.18 = newc %tmp.21 ();
+        putv self :sendTimer %tmp.18;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 22 8 ]
+        %tmp.24 = getm $.Toybox.Timer;
+        %tmp.25 = getv function ? %tmp.24 :Timer;
+        %tmp.22 = newc %tmp.25 ();
+        putv self :sensorTimer %tmp.22;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 24 15 ]
+        %tmp.26 = getm $.Toybox.System;
+        %tmp.27 = getv function %tmp.26 :getDeviceSettings;
+        %tmp.28 = invoke %tmp.26 %tmp.27();
+        %tmp.29 = getv %tmp.28 :phoneConnected;
+        putv self :phone %tmp.29;
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 11; ]
+    static
+    <init> {
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 12; @position = 8; ]
+    var accel_x;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 13; @position = 8; ]
+    var accel_y;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 14; @position = 8; ]
+    var accel_z;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 15; @position = 8; ]
+    var heartRate = 0;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 16; @position = 8; ]
+    var latitude = 0;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 17; @position = 8; ]
+    var longitude = 0;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 18; @position = 8; ]
+    var url = "https://w66efzraph.execute-api.us-east-1.amazonaws.com/prod/watchdata";
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 19; @position = 8; ]
+    var unitId;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 20; @position = 8; ]
+    var dataBatch;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 21; @position = 8; ]
+    var sendTimer;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 22; @position = 8; ]
+    var sensorTimer;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 23; @position = 16; ]
+    private
+    var _UUID as Lang.String;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 24; @position = 15; ]
+    public
+    var phone;
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 26; ]
+    public
+    function initialize() as Void {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_26_33_33_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 27 8 ]
+        %tmp.2 = getv ? :View;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 28 8 ]
+        %tmp.4 = getm $.Toybox.System;
+        %tmp.5 = getv function %tmp.4 :println;
+        %tmp.6 = "phone connected: ";
+        %tmp.8 = getv ? :phone;
+        %tmp.9 = add %tmp.6 %tmp.8;
+        invoke %tmp.4 %tmp.5(%tmp.9);
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 29 8 ]
+        %tmp.10 = self;
+        %tmp.11 = getv function %tmp.10 :onStart;
+        invoke %tmp.10 %tmp.11();
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 30 8 ]
+        %tmp.13 = getv ? :unitId;
+        %tmp.14 = getv function %tmp.13 :toString;
+        %tmp.15 = invoke %tmp.13 %tmp.14();
+        putv self :_UUID %tmp.15;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 31 8 ]
+        %tmp.17 = getv ? :sendTimer;
+        %tmp.18 = getv function %tmp.17 :start;
+        %tmp.19 = self;
+        %tmp.20 = getv function %tmp.19 :method;
+        %tmp.22 = const :sendDataBatch;
+        %tmp.23 = invoke %tmp.19 %tmp.20(%tmp.22);
+        %tmp.24 = 1000;
+        %tmp.25 = true;
+        invoke %tmp.17 %tmp.18(%tmp.23, %tmp.24, %tmp.25);
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 32 8 ]
+        %tmp.27 = getv ? :sensorTimer;
+        %tmp.28 = getv function %tmp.27 :start;
+        %tmp.29 = self;
+        %tmp.30 = getv function %tmp.29 :method;
+        %tmp.32 = const :updateSensorData;
+        %tmp.33 = invoke %tmp.29 %tmp.30(%tmp.32);
+        %tmp.34 = 1000;
+        %tmp.35 = true;
+        invoke %tmp.27 %tmp.28(%tmp.33, %tmp.34, %tmp.35);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_26_33_33_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 36; ]
+    public
+    function onStart() as Void {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_36_38_50_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 38 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_36_38_50_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_36_38_50_4_stop" ]
+        %options.1 = local;
+        %tmp.1 = newd 3;
+        %tmp.3 = const :period;
+        %tmp.4 = 1;
+        %tmp.5 = dup %tmp.1;
+        %tmp.6 = aputv %tmp.5 %tmp.3 %tmp.4;
+        %tmp.8 = const :accelerometer;
+        %tmp.9 = newd 2;
+        %tmp.11 = const :enabled;
+        %tmp.12 = true;
+        %tmp.13 = dup %tmp.9;
+        %tmp.14 = aputv %tmp.13 %tmp.11 %tmp.12;
+        %tmp.16 = const :sampleRate;
+        %tmp.17 = 25;
+        %tmp.18 = dup %tmp.14;
+        %tmp.19 = aputv %tmp.18 %tmp.16 %tmp.17;
+        %tmp.20 = dup %tmp.6;
+        %tmp.21 = aputv %tmp.20 %tmp.8 %tmp.19;
+        %tmp.23 = const :heartBeatIntervals;
+        %tmp.24 = newd 1;
+        %tmp.26 = const :enabled;
+        %tmp.27 = true;
+        %tmp.28 = dup %tmp.24;
+        %tmp.29 = aputv %tmp.28 %tmp.26 %tmp.27;
+        %tmp.30 = dup %tmp.21;
+        %tmp.31 = aputv %tmp.30 %tmp.23 %tmp.29;
+        lputv %options.1 %tmp.31;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 43 8 ]
+        try @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_beginTry @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_endTry @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_catch @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_finally;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_beginTry:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_12_47_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 44 12 ]
+        %tmp.32 = getm $.Toybox.Sensor;
+        %tmp.33 = getv function %tmp.32 :unregisterSensorDataListener;
+        invoke %tmp.32 %tmp.33();
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 45 12 ]
+        %tmp.34 = getm $.Toybox.Sensor;
+        %tmp.35 = getv function %tmp.34 :registerSensorDataListener;
+        %tmp.36 = self;
+        %tmp.37 = getv function %tmp.36 :method;
+        %tmp.39 = const :accelCallback;
+        %tmp.40 = invoke %tmp.36 %tmp.37(%tmp.39);
+        %tmp.42 = lgetv %options.1;
+        invoke %tmp.34 %tmp.35(%tmp.40, %tmp.42);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_12_47_8_stop:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_endTry:
+        jsr @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_finally;
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_catch:
+        %tmp.43 = exception;
+        push %tmp.43;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 47 10 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_catch" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_47_10_49_8_end" ]
+        %e.2 = local;
+        %tmp.44 = dup %tmp.43;
+        lputv %e.2 %tmp.44;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_47_19_49_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 48 12 ]
+        %tmp.45 = getm $.Toybox.System;
+        %tmp.46 = getv function %tmp.45 :println;
+        %tmp.47 = lgetv %e.2;
+        %tmp.48 = getv function %tmp.47 :getErrorMessage;
+        %tmp.49 = invoke %tmp.47 %tmp.48();
+        invoke %tmp.45 %tmp.46(%tmp.49);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_47_19_49_8_stop:
+        jsr @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_finally;
+        pop;
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_47_10_49_8_end:
+        try @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_catch @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_47_10_49_8_end @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_47_10_49_8_end @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_finally;
+        jsr @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_finally;
+        throw %tmp.43;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_finally:
+        jsrret;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_43_8_49_8_end:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_36_38_50_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 52; ]
+    public
+    function onStop() as Void {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_52_37_54_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 53 8 ]
+        %tmp.1 = getm $.Toybox.Sensor;
+        %tmp.2 = getv function %tmp.1 :unregisterSensorDataListener;
+        invoke %tmp.1 %tmp.2();
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_52_37_54_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 57; ]
+    public
+    function accelCallback(sensorData as Sensor.SensorData) as Void {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_57_75_65_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 58 8 ]
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_8_63_8_if_stmt:
+        %tmp.2 = lgetv %sensorData;
+        %tmp.4 = const :accelerometerData;
+        %tmp.5 = canhazplz %tmp.2 %tmp.4;
+        bf %tmp.5 @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_8_63_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_8_63_8_if_true:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_47_63_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 59 12 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_47_63_8_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_47_63_8_stop" ]
+        %accelData.1 = local;
+        %tmp.6 = lgetv %sensorData;
+        %tmp.7 = as %tmp.6 { (interface { var accelerometerData; }) };
+        %tmp.8 = getv %tmp.7 :accelerometerData;
+        lputv %accelData.1 %tmp.8;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 60 12 ]
+        %tmp.9 = lgetv %accelData.1;
+        %tmp.10 = getv %tmp.9 :x;
+        putv self :accel_x %tmp.10;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 61 12 ]
+        %tmp.11 = lgetv %accelData.1;
+        %tmp.12 = getv %tmp.11 :y;
+        putv self :accel_y %tmp.12;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 62 12 ]
+        %tmp.13 = lgetv %accelData.1;
+        %tmp.14 = getv %tmp.13 :z;
+        putv self :accel_z %tmp.14;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_47_63_8_stop:
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_8_63_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_58_8_63_8_if_end:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 64 8 ]
+        %tmp.15 = self;
+        %tmp.16 = getv function %tmp.15 :collectData;
+        invoke %tmp.15 %tmp.16();
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_57_75_65_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 68; ]
+    public
+    function updateSensorData() as Void {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_68_47_83_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 69 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_68_47_83_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_68_47_83_4_stop" ]
+        %sensorInfo.1 = local;
+        %tmp.1 = getm $.Toybox.Sensor;
+        %tmp.2 = getv function %tmp.1 :getInfo;
+        %tmp.3 = invoke %tmp.1 %tmp.2();
+        lputv %sensorInfo.1 %tmp.3;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 70 8 ]
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_70_8_75_8_if_stmt:
+        %tmp.5 = lgetv %sensorInfo.1;
+        %tmp.7 = const :heartRate;
+        %tmp.8 = canhazplz %tmp.5 %tmp.7;
+        bf %tmp.8 @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_70_8_75_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_70_8_75_8_if_true:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_70_39_75_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 71 12 ]
+        %tmp.9 = lgetv %sensorInfo.1;
+        %tmp.10 = as %tmp.9 { (interface { var heartRate; }) };
+        %tmp.11 = getv %tmp.10 :heartRate;
+        putv self :heartRate %tmp.11;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 72 12 ]
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_72_12_74_12_if_stmt:
+        %tmp.13 = getv ? :heartRate;
+        %tmp.14 = null;
+        %tmp.15 = eq %tmp.13 %tmp.14;
+        bf %tmp.15 @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_72_12_74_12_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_72_12_74_12_if_true:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_72_35_74_12_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 73 16 ]
+        %tmp.16 = getm $.Toybox.System;
+        %tmp.17 = getv function %tmp.16 :println;
+        %tmp.18 = "heartRate is null";
+        invoke %tmp.16 %tmp.17(%tmp.18);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_72_35_74_12_stop:
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_72_12_74_12_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_72_12_74_12_if_end:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_70_39_75_8_stop:
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_70_8_75_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_70_8_75_8_if_end:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 77 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_68_47_83_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_68_47_83_4_stop" ]
+        %positionInfo.2 = local;
+        %tmp.19 = getm $.Toybox.Position;
+        %tmp.20 = getv function %tmp.19 :getInfo;
+        %tmp.21 = invoke %tmp.19 %tmp.20();
+        lputv %positionInfo.2 %tmp.21;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 78 8 ]
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_8_82_8_if_stmt:
+        %tmp.23 = lgetv %positionInfo.2;
+        %tmp.25 = const :position;
+        %tmp.26 = canhazplz %tmp.23 %tmp.25;
+        bf %tmp.26 @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_8_82_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_8_82_8_if_true:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_40_82_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 79 12 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_40_82_8_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_40_82_8_stop" ]
+        %location.3 = local;
+        %tmp.27 = lgetv %positionInfo.2;
+        %tmp.28 = as %tmp.27 { (interface { var position; }) };
+        %tmp.29 = getv %tmp.28 :position;
+        %tmp.30 = getv function %tmp.29 :toDegrees;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        lputv %location.3 %tmp.31;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 80 12 ]
+        %tmp.33 = lgetv %location.3;
+        %tmp.34 = 0;
+        %tmp.35 = agetv %tmp.33 %tmp.34;
+        putv self :latitude %tmp.35;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 81 12 ]
+        %tmp.37 = lgetv %location.3;
+        %tmp.38 = 1;
+        %tmp.39 = agetv %tmp.37 %tmp.38;
+        putv self :longitude %tmp.39;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_40_82_8_stop:
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_8_82_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_78_8_82_8_if_end:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_68_47_83_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 85; ]
+    public
+    function collectData() as Void {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_85_41_109_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 86 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_85_41_109_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_85_41_109_4_stop" ]
+        %cur_acc_x.1 = local;
+        %tmp.1 = 0;
+        lputv %cur_acc_x.1 %tmp.1;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 87 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_85_41_109_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_85_41_109_4_stop" ]
+        %cur_acc_y.2 = local;
+        %tmp.2 = 0;
+        lputv %cur_acc_y.2 %tmp.2;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 88 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_85_41_109_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_85_41_109_4_stop" ]
+        %cur_acc_z.3 = local;
+        %tmp.3 = 0;
+        lputv %cur_acc_z.3 %tmp.3;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 90 8 ]
+        for @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_test @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_incr @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_init:
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_begin" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_end" ]
+        %i.4 = local;
+        %tmp.4 = 0;
+        lputv %i.4 %tmp.4;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_test:
+        %tmp.6 = lgetv %i.4;
+        %tmp.8 = getv ? :accel_x;
+        %tmp.9 = getv function %tmp.8 :size;
+        %tmp.10 = invoke %tmp.8 %tmp.9();
+        %tmp.11 = lt %tmp.6 %tmp.10;
+        bf %tmp.11 @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_begin:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_49_108_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 91 12 ]
+        %tmp.13 = getv ? :accel_x;
+        %tmp.15 = lgetv %i.4;
+        %tmp.16 = agetv %tmp.13 %tmp.15;
+        lputv %cur_acc_x.1 %tmp.16;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 92 12 ]
+        %tmp.18 = getv ? :accel_y;
+        %tmp.20 = lgetv %i.4;
+        %tmp.21 = agetv %tmp.18 %tmp.20;
+        lputv %cur_acc_y.2 %tmp.21;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 93 12 ]
+        %tmp.23 = getv ? :accel_z;
+        %tmp.25 = lgetv %i.4;
+        %tmp.26 = agetv %tmp.23 %tmp.25;
+        lputv %cur_acc_z.3 %tmp.26;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 95 12 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_49_108_8_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_49_108_8_stop" ]
+        %data.5 = local;
+        %tmp.27 = newd 7;
+        %tmp.28 = "xAccel";
+        %tmp.29 = lgetv %cur_acc_x.1;
+        %tmp.30 = getv function %tmp.29 :toNumber;
+        %tmp.31 = invoke %tmp.29 %tmp.30();
+        %tmp.32 = dup %tmp.27;
+        %tmp.33 = aputv %tmp.32 %tmp.28 %tmp.31;
+        %tmp.34 = "yAccel";
+        %tmp.35 = lgetv %cur_acc_y.2;
+        %tmp.36 = getv function %tmp.35 :toNumber;
+        %tmp.37 = invoke %tmp.35 %tmp.36();
+        %tmp.38 = dup %tmp.33;
+        %tmp.39 = aputv %tmp.38 %tmp.34 %tmp.37;
+        %tmp.40 = "zAccel";
+        %tmp.41 = lgetv %cur_acc_z.3;
+        %tmp.42 = getv function %tmp.41 :toNumber;
+        %tmp.43 = invoke %tmp.41 %tmp.42();
+        %tmp.44 = dup %tmp.39;
+        %tmp.45 = aputv %tmp.44 %tmp.40 %tmp.43;
+        %tmp.46 = "heartRate";
+        %tmp.48 = getv ? :heartRate;
+        %tmp.49 = dup %tmp.45;
+        %tmp.50 = aputv %tmp.49 %tmp.46 %tmp.48;
+        %tmp.51 = "latitude";
+        %tmp.53 = getv ? :latitude;
+        %tmp.54 = dup %tmp.50;
+        %tmp.55 = aputv %tmp.54 %tmp.51 %tmp.53;
+        %tmp.56 = "longitude";
+        %tmp.58 = getv ? :longitude;
+        %tmp.59 = dup %tmp.55;
+        %tmp.60 = aputv %tmp.59 %tmp.56 %tmp.58;
+        %tmp.61 = "unitID";
+        %tmp.63 = getv ? :unitId;
+        %tmp.64 = dup %tmp.60;
+        %tmp.65 = aputv %tmp.64 %tmp.61 %tmp.63;
+        lputv %data.5 %tmp.65;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 104 12 ]
+        %tmp.67 = getv ? :dataBatch;
+        %tmp.68 = getv function %tmp.67 :add;
+        %tmp.70 = lgetv %data.5;
+        invoke %tmp.67 %tmp.68(%tmp.70);
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 107 12 ]
+        %tmp.71 = getm $.Toybox.System;
+        %tmp.72 = getv function %tmp.71 :println;
+        %tmp.73 = "Collected Data: ";
+        %tmp.74 = lgetv %data.5;
+        %tmp.75 = getv function %tmp.74 :toString;
+        %tmp.76 = invoke %tmp.74 %tmp.75();
+        %tmp.77 = add %tmp.73 %tmp.76;
+        invoke %tmp.71 %tmp.72(%tmp.77);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_49_108_8_stop:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_incr:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 90 ]
+        %tmp.80 = lgetv %i.4;
+        %tmp.81 = add %tmp.80 1;
+        lputv %i.4 %tmp.81;
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_test;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_90_8_108_8_for_end:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_85_41_109_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 111; ]
+    public
+    function sendDataBatch() as Void {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_111_44_128_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 112 8 ]
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_8_127_8_if_stmt:
+        %tmp.2 = getv ? :dataBatch;
+        %tmp.3 = getv function %tmp.2 :size;
+        %tmp.4 = invoke %tmp.2 %tmp.3();
+        %tmp.5 = 0;
+        %tmp.6 = gt %tmp.4 %tmp.5;
+        bf %tmp.6 @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_8_127_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_8_127_8_if_true:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_34_127_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 113 12 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_34_127_8_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_34_127_8_stop" ]
+        %params.1 = local;
+        %tmp.7 = newd 1;
+        %tmp.8 = "dataBatch";
+        %tmp.10 = getv ? :dataBatch;
+        %tmp.11 = dup %tmp.7;
+        %tmp.12 = aputv %tmp.11 %tmp.8 %tmp.10;
+        lputv %params.1 %tmp.12;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 117 12 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_34_127_8_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_34_127_8_stop" ]
+        %headers.2 = local;
+        %tmp.13 = newd 1;
+        %tmp.14 = "Content-Type";
+        %tmp.16 = getv ? :Communications;
+        %tmp.17 = getv %tmp.16 :REQUEST_CONTENT_TYPE_JSON;
+        %tmp.18 = dup %tmp.13;
+        %tmp.19 = aputv %tmp.18 %tmp.14 %tmp.17;
+        lputv %headers.2 %tmp.19;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 120 12 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_34_127_8_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_34_127_8_stop" ]
+        %options.3 = local;
+        %tmp.20 = newd 3;
+        %tmp.22 = const :headers;
+        %tmp.24 = lgetv %headers.2;
+        %tmp.25 = dup %tmp.20;
+        %tmp.26 = aputv %tmp.25 %tmp.22 %tmp.24;
+        %tmp.28 = const :method;
+        %tmp.30 = getv ? :Communications;
+        %tmp.31 = getv %tmp.30 :HTTP_REQUEST_METHOD_POST;
+        %tmp.32 = dup %tmp.26;
+        %tmp.33 = aputv %tmp.32 %tmp.28 %tmp.31;
+        %tmp.35 = const :responseType;
+        %tmp.37 = getv ? :Communications;
+        %tmp.38 = getv %tmp.37 :HTTP_RESPONSE_CONTENT_TYPE_JSON;
+        %tmp.39 = dup %tmp.33;
+        %tmp.40 = aputv %tmp.39 %tmp.35 %tmp.38;
+        lputv %options.3 %tmp.40;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 125 12 ]
+        %tmp.42 = getv ? :Communications;
+        %tmp.43 = getv function %tmp.42 :makeWebRequest;
+        %tmp.45 = getv ? :url;
+        %tmp.47 = lgetv %params.1;
+        %tmp.49 = lgetv %options.3;
+        %tmp.50 = self;
+        %tmp.51 = getv function %tmp.50 :method;
+        %tmp.53 = const :onReceive;
+        %tmp.54 = invoke %tmp.50 %tmp.51(%tmp.53);
+        invoke %tmp.42 %tmp.43(%tmp.45, %tmp.47, %tmp.49, %tmp.54);
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 126 12 ]
+        %tmp.55 = newa 0;
+        putv self :dataBatch %tmp.55;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_34_127_8_stop:
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_8_127_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_112_8_127_8_if_end:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_111_44_128_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 130; ]
+    public
+    function onReceive(responseCode as Lang.Number, data as Lang.Dictionary or Lang.String or Null) as Void {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_130_114_136_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 131 8 ]
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_131_8_135_8_if_stmt:
+        %tmp.2 = lgetv %responseCode;
+        %tmp.3 = 200;
+        %tmp.4 = eq %tmp.2 %tmp.3;
+        bf %tmp.4 @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_131_8_135_8_if_false;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_131_8_135_8_if_true:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_131_33_133_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 132 12 ]
+        %tmp.5 = getm $.Toybox.System;
+        %tmp.6 = getv function %tmp.5 :println;
+        %tmp.7 = "Batch data sent successfully.";
+        invoke %tmp.5 %tmp.6(%tmp.7);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_131_33_133_8_stop:
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_131_8_135_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_131_8_135_8_if_false:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_133_15_135_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 134 12 ]
+        %tmp.8 = getm $.Toybox.System;
+        %tmp.9 = getv function %tmp.8 :println;
+        %tmp.10 = "Failed to send batch data. Response code: ";
+        %tmp.11 = lgetv %responseCode;
+        %tmp.12 = getv function %tmp.11 :toString;
+        %tmp.13 = invoke %tmp.11 %tmp.12();
+        %tmp.14 = add %tmp.10 %tmp.13;
+        invoke %tmp.8 %tmp.9(%tmp.14);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_133_15_135_8_stop:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_131_8_135_8_if_end:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_130_114_136_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 139; ]
+    public
+    function onLayout(dc) {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_139_33_141_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 140 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :setLayout;
+        %tmp.4 = getv ? :Rez;
+        %tmp.5 = getv %tmp.4 :Layouts;
+        %tmp.6 = getv function %tmp.5 :MainLayout;
+        %tmp.8 = lgetv %dc;
+        %tmp.9 = invoke %tmp.5 %tmp.6(%tmp.8);
+        invoke %tmp.1 %tmp.2(%tmp.9);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_139_33_141_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 143; ]
+    public
+    function onShow() {
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 147; ]
+    public
+    function onUpdate(dc) {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 149 8 ]
+        %tmp.1 = lgetv %dc;
+        %tmp.2 = getv function %tmp.1 :setColor;
+        %tmp.3 = getm $.Toybox.Graphics;
+        %tmp.4 = getv %tmp.3 :COLOR_TRANSPARENT;
+        %tmp.5 = getm $.Toybox.Graphics;
+        %tmp.6 = getv %tmp.5 :COLOR_BLACK;
+        invoke %tmp.1 %tmp.2(%tmp.4, %tmp.6);
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 150 8 ]
+        %tmp.7 = lgetv %dc;
+        %tmp.8 = getv function %tmp.7 :clear;
+        invoke %tmp.7 %tmp.8();
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 151 8 ]
+        %tmp.9 = lgetv %dc;
+        %tmp.10 = getv function %tmp.9 :setColor;
+        %tmp.11 = getm $.Toybox.Graphics;
+        %tmp.12 = getv %tmp.11 :COLOR_WHITE;
+        %tmp.13 = getm $.Toybox.Graphics;
+        %tmp.14 = getv %tmp.13 :COLOR_TRANSPARENT;
+        invoke %tmp.9 %tmp.10(%tmp.12, %tmp.14);
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 153 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_stop" ]
+        %x.1 = local;
+        %tmp.15 = lgetv %dc;
+        %tmp.16 = getv function %tmp.15 :getWidth;
+        %tmp.17 = invoke %tmp.15 %tmp.16();
+        %tmp.18 = 2;
+        %tmp.19 = div %tmp.17 %tmp.18;
+        lputv %x.1 %tmp.19;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 154 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_stop" ]
+        %y.2 = local;
+        %tmp.20 = lgetv %dc;
+        %tmp.21 = getv function %tmp.20 :getHeight;
+        %tmp.22 = invoke %tmp.20 %tmp.21();
+        %tmp.23 = 2;
+        %tmp.24 = div %tmp.22 %tmp.23;
+        lputv %y.2 %tmp.24;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 156 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_stop" ]
+        %font.3 = local;
+        %tmp.25 = getm $.Toybox.Graphics;
+        %tmp.26 = getv %tmp.25 :FONT_XTINY;
+        lputv %font.3 %tmp.26;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 157 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_stop" ]
+        %textHeight.4 = local;
+        %tmp.27 = lgetv %dc;
+        %tmp.28 = getv function %tmp.27 :getFontHeight;
+        %tmp.30 = lgetv %font.3;
+        %tmp.31 = invoke %tmp.27 %tmp.28(%tmp.30);
+        lputv %textHeight.4 %tmp.31;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 159 8 ]
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_159_8_163_8_if_stmt:
+        %tmp.33 = getv ? :phone;
+        %tmp.34 = true;
+        %tmp.35 = eq %tmp.33 %tmp.34;
+        bf %tmp.35 @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_159_8_163_8_if_false;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_159_8_163_8_if_true:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_159_27_161_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 160 12 ]
+        %tmp.36 = lgetv %dc;
+        %tmp.37 = getv function %tmp.36 :drawText;
+        %tmp.39 = lgetv %x.1;
+        %tmp.40 = 0;
+        %tmp.41 = getm $.Toybox.Graphics;
+        %tmp.42 = getv %tmp.41 :FONT_SMALL;
+        %tmp.43 = "Phone connected";
+        %tmp.44 = getm $.Toybox.Graphics;
+        %tmp.45 = getv %tmp.44 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.36 %tmp.37(%tmp.39, %tmp.40, %tmp.42, %tmp.43, %tmp.45);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_159_27_161_8_stop:
+        goto @D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_159_8_163_8_if_end;
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_159_8_163_8_if_false:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_161_15_163_8_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 162 12 ]
+        %tmp.46 = lgetv %dc;
+        %tmp.47 = getv function %tmp.46 :drawText;
+        %tmp.49 = lgetv %x.1;
+        %tmp.50 = 0;
+        %tmp.51 = getm $.Toybox.Graphics;
+        %tmp.52 = getv %tmp.51 :FONT_SMALL;
+        %tmp.53 = "Phone disconnected";
+        %tmp.54 = getm $.Toybox.Graphics;
+        %tmp.55 = getv %tmp.54 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.46 %tmp.47(%tmp.49, %tmp.50, %tmp.52, %tmp.53, %tmp.55);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_161_15_163_8_stop:
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_159_8_163_8_if_end:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 164 8 ]
+        %tmp.56 = lgetv %y.2;
+        %tmp.58 = lgetv %textHeight.4;
+        %tmp.59 = add %tmp.56 %tmp.58;
+        lputv %y.2 %tmp.59;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 166 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_stop" ]
+        %_UUID1.5 = local;
+        %tmp.61 = getv ? :_UUID;
+        %tmp.62 = getv function %tmp.61 :substring;
+        %tmp.63 = 0;
+        %tmp.64 = 20;
+        %tmp.65 = invoke %tmp.61 %tmp.62(%tmp.63, %tmp.64);
+        lputv %_UUID1.5 %tmp.65;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 167 8 ]
+        [ "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_start" "D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_stop" ]
+        %_UUID2.6 = local;
+        %tmp.67 = getv ? :_UUID;
+        %tmp.68 = getv function %tmp.67 :substring;
+        %tmp.69 = 20;
+        %tmp.70 = 40;
+        %tmp.71 = invoke %tmp.67 %tmp.68(%tmp.69, %tmp.70);
+        lputv %_UUID2.6 %tmp.71;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 168 8 ]
+        %tmp.72 = lgetv %dc;
+        %tmp.73 = getv function %tmp.72 :drawText;
+        %tmp.75 = lgetv %x.1;
+        %tmp.77 = lgetv %y.2;
+        %tmp.78 = getm $.Toybox.Graphics;
+        %tmp.79 = getv %tmp.78 :FONT_SMALL;
+        %tmp.80 = "UUID:";
+        %tmp.81 = getm $.Toybox.Graphics;
+        %tmp.82 = getv %tmp.81 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.72 %tmp.73(%tmp.75, %tmp.77, %tmp.79, %tmp.80, %tmp.82);
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 169 8 ]
+        %tmp.83 = lgetv %y.2;
+        %tmp.85 = lgetv %textHeight.4;
+        %tmp.86 = add %tmp.83 %tmp.85;
+        lputv %y.2 %tmp.86;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 170 8 ]
+        %tmp.87 = lgetv %dc;
+        %tmp.88 = getv function %tmp.87 :drawText;
+        %tmp.90 = lgetv %x.1;
+        %tmp.92 = lgetv %y.2;
+        %tmp.94 = lgetv %font.3;
+        %tmp.96 = lgetv %_UUID1.5;
+        %tmp.97 = getm $.Toybox.Graphics;
+        %tmp.98 = getv %tmp.97 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.87 %tmp.88(%tmp.90, %tmp.92, %tmp.94, %tmp.96, %tmp.98);
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 171 8 ]
+        %tmp.99 = lgetv %y.2;
+        %tmp.101 = lgetv %textHeight.4;
+        %tmp.102 = add %tmp.99 %tmp.101;
+        lputv %y.2 %tmp.102;
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 172 8 ]
+        %tmp.103 = lgetv %dc;
+        %tmp.104 = getv function %tmp.103 :drawText;
+        %tmp.106 = lgetv %x.1;
+        %tmp.108 = lgetv %y.2;
+        %tmp.110 = lgetv %font.3;
+        %tmp.112 = lgetv %_UUID2.6;
+        %tmp.113 = getm $.Toybox.Graphics;
+        %tmp.114 = getv %tmp.113 :TEXT_JUSTIFY_CENTER;
+        invoke %tmp.103 %tmp.104(%tmp.106, %tmp.108, %tmp.110, %tmp.112, %tmp.114);
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_147_33_174_4_stop:
+    }
+    [ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 176; ]
+    public
+    function onHide() {
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_176_29_178_4_start:
+[ "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc" 177 8 ]
+        %tmp.1 = self;
+        %tmp.2 = getv function %tmp.1 :onStop;
+        invoke %tmp.1 %tmp.2();
+D_Garmin_ConnectIQ_Watch_IoT_IoTWatch2_source_IoTWatchView_mc_176_29_178_4_stop:
+    }
+}
+[ @file = "D:\Garmin\ConnectIQ-Watch-IoT\IoTWatch2\source\IoTWatchView.mc"; @line = 1; ]
+<init> {
+}
