@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+    <manifest filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/manifest.xml"/>
+    <pcToLineNum>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="1" lineNum="13" parent="globals/IoTWatchView3" pc="268435460" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="1" lineNum="29" parent="globals/IoTWatchView3" pc="268435471" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="1" lineNum="30" parent="globals/IoTWatchView3" pc="268435493" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="1" lineNum="33" parent="globals/IoTWatchView3" pc="268435502" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="1" lineNum="35" parent="globals/IoTWatchView3" pc="268435531" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="2" lineNum="7" parent="globals/Rez" pc="268435554" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="3" lineNum="4" parent="globals/IoTWatchApp3" pc="268435574" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="4" lineNum="239" parent="globals/IoTWatchView3" pc="268435586" symbol="onPosition"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="4" lineNum="240" parent="globals/IoTWatchView3" pc="268435589" symbol="onPosition"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="4" lineNum="241" parent="globals/IoTWatchView3" pc="268435611" symbol="onPosition"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="4" lineNum="242" parent="globals/IoTWatchView3" pc="268435626" symbol="onPosition"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="4" lineNum="243" parent="globals/IoTWatchView3" pc="268435637" symbol="onPosition"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="319" parent="globals/IoTWatchView3" pc="268435653" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="320" parent="globals/IoTWatchView3" pc="268435656" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="321" parent="globals/IoTWatchView3" pc="268435672" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="322" parent="globals/IoTWatchView3" pc="268435702" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="326" parent="globals/IoTWatchView3" pc="268435720" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="329" parent="globals/IoTWatchView3" pc="268435727" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="334" parent="globals/IoTWatchView3" pc="268435757" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="335" parent="globals/IoTWatchView3" pc="268435781" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="336" parent="globals/IoTWatchView3" pc="268435817" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="5" lineNum="338" parent="globals/IoTWatchView3" pc="268435829" symbol="sendDataBatch"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="6" lineNum="102" parent="globals/IoTWatchView3" pc="268435848" symbol="onStart"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="6" lineNum="104" parent="globals/IoTWatchView3" pc="268435851" symbol="onStart"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="6" lineNum="110" parent="globals/IoTWatchView3" pc="268435910" symbol="onStart"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="6" lineNum="111" parent="globals/IoTWatchView3" pc="268435921" symbol="onStart"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="6" lineNum="113" parent="globals/IoTWatchView3" pc="268435955" symbol="onStart"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="6" lineNum="114" parent="globals/IoTWatchView3" pc="268435959" symbol="onStart"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="287" parent="globals/IoTWatchView3" pc="268435992" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="288" parent="globals/IoTWatchView3" pc="268435995" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="289" parent="globals/IoTWatchView3" pc="268436021" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="290" parent="globals/IoTWatchView3" pc="268436024" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="291" parent="globals/IoTWatchView3" pc="268436037" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="292" parent="globals/IoTWatchView3" pc="268436048" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="296" parent="globals/IoTWatchView3" pc="268436060" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="309" parent="globals/IoTWatchView3" pc="268436185" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="312" parent="globals/IoTWatchView3" pc="268436201" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="313" parent="globals/IoTWatchView3" pc="268436213" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="315" parent="globals/IoTWatchView3" pc="268436263" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="7" lineNum="316" parent="globals/IoTWatchView3" pc="268436284" symbol="collectData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="118" parent="globals/IoTWatchView3" pc="268436311" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="119" parent="globals/IoTWatchView3" pc="268436313" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="120" parent="globals/IoTWatchView3" pc="268436324" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="121" parent="globals/IoTWatchView3" pc="268436340" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="122" parent="globals/IoTWatchView3" pc="268436349" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="123" parent="globals/IoTWatchView3" pc="268436361" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="124" parent="globals/IoTWatchView3" pc="268436373" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="126" parent="globals/IoTWatchView3" pc="268436384" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="127" parent="globals/IoTWatchView3" pc="268436393" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="128" parent="globals/IoTWatchView3" pc="268436405" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="130" parent="globals/IoTWatchView3" pc="268436416" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="131" parent="globals/IoTWatchView3" pc="268436423" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="132" parent="globals/IoTWatchView3" pc="268436432" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="133" parent="globals/IoTWatchView3" pc="268436440" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="134" parent="globals/IoTWatchView3" pc="268436448" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="8" lineNum="135" parent="globals/IoTWatchView3" pc="268436456" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="9" lineNum="374" parent="globals/IoTWatchView3" pc="268436475" symbol="onLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="9" lineNum="375" parent="globals/IoTWatchView3" pc="268436477" symbol="onLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="10" lineNum="360" parent="globals/IoTWatchView3" pc="268436511" symbol="onReceive"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="10" lineNum="361" parent="globals/IoTWatchView3" pc="268436513" symbol="onReceive"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="10" lineNum="362" parent="globals/IoTWatchView3" pc="268436534" symbol="onReceive"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="10" lineNum="363" parent="globals/IoTWatchView3" pc="268436543" symbol="onReceive"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="10" lineNum="364" parent="globals/IoTWatchView3" pc="268436561" symbol="onReceive"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="10" lineNum="366" parent="globals/IoTWatchView3" pc="268436573" symbol="onReceive"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="10" lineNum="367" parent="globals/IoTWatchView3" pc="268436599" symbol="onReceive"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="10" lineNum="368" parent="globals/IoTWatchView3" pc="268436605" symbol="onReceive"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="202" parent="globals/IoTWatchView3" pc="268436636" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="203" parent="globals/IoTWatchView3" pc="268436638" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="204" parent="globals/IoTWatchView3" pc="268436647" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="205" parent="globals/IoTWatchView3" pc="268436666" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="206" parent="globals/IoTWatchView3" pc="268436685" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="207" parent="globals/IoTWatchView3" pc="268436704" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="208" parent="globals/IoTWatchView3" pc="268436723" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="209" parent="globals/IoTWatchView3" pc="268436742" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="210" parent="globals/IoTWatchView3" pc="268436761" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="211" parent="globals/IoTWatchView3" pc="268436780" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="212" parent="globals/IoTWatchView3" pc="268436799" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="213" parent="globals/IoTWatchView3" pc="268436818" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="11" lineNum="215" parent="globals/IoTWatchView3" pc="268436839" symbol="writeToFitFile"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="343" parent="globals/IoTWatchView3" pc="268436858" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="344" parent="globals/IoTWatchView3" pc="268436861" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="345" parent="globals/IoTWatchView3" pc="268436864" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="346" parent="globals/IoTWatchView3" pc="268436871" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="347" parent="globals/IoTWatchView3" pc="268436887" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="348" parent="globals/IoTWatchView3" pc="268436905" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="349" parent="globals/IoTWatchView3" pc="268436922" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="352" parent="globals/IoTWatchView3" pc="268436950" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="353" parent="globals/IoTWatchView3" pc="268436957" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="355" parent="globals/IoTWatchView3" pc="268436967" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="12" lineNum="356" parent="globals/IoTWatchView3" pc="268436988" symbol="removeAlphabets"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="13" lineNum="95" parent="globals/IoTWatchView3" pc="268436991" symbol="generateSessionId"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="13" lineNum="96" parent="globals/IoTWatchView3" pc="268436994" symbol="generateSessionId"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="13" lineNum="97" parent="globals/IoTWatchView3" pc="268437006" symbol="generateSessionId"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="13" lineNum="98" parent="globals/IoTWatchView3" pc="268437018" symbol="generateSessionId"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="152" parent="globals/IoTWatchView3" pc="268437040" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="153" parent="globals/IoTWatchView3" pc="268437043" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="154" parent="globals/IoTWatchView3" pc="268437051" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="155" parent="globals/IoTWatchView3" pc="268437059" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="156" parent="globals/IoTWatchView3" pc="268437067" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="157" parent="globals/IoTWatchView3" pc="268437075" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="158" parent="globals/IoTWatchView3" pc="268437078" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="160" parent="globals/IoTWatchView3" pc="268437081" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="161" parent="globals/IoTWatchView3" pc="268437101" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="163" parent="globals/IoTWatchView3" pc="268437129" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="164" parent="globals/IoTWatchView3" pc="268437134" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="165" parent="globals/IoTWatchView3" pc="268437143" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="166" parent="globals/IoTWatchView3" pc="268437152" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="168" parent="globals/IoTWatchView3" pc="268437158" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="169" parent="globals/IoTWatchView3" pc="268437169" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="171" parent="globals/IoTWatchView3" pc="268437181" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="172" parent="globals/IoTWatchView3" pc="268437192" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="176" parent="globals/IoTWatchView3" pc="268437204" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="177" parent="globals/IoTWatchView3" pc="268437224" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="178" parent="globals/IoTWatchView3" pc="268437244" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="180" parent="globals/IoTWatchView3" pc="268437264" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="181" parent="globals/IoTWatchView3" pc="268437295" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="183" parent="globals/IoTWatchView3" pc="268437310" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="184" parent="globals/IoTWatchView3" pc="268437325" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="185" parent="globals/IoTWatchView3" pc="268437340" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="187" parent="globals/IoTWatchView3" pc="268437355" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="189" parent="globals/IoTWatchView3" pc="268437362" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="190" parent="globals/IoTWatchView3" pc="268437370" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="191" parent="globals/IoTWatchView3" pc="268437377" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="192" parent="globals/IoTWatchView3" pc="268437384" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="193" parent="globals/IoTWatchView3" pc="268437392" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="194" parent="globals/IoTWatchView3" pc="268437395" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="195" parent="globals/IoTWatchView3" pc="268437398" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="196" parent="globals/IoTWatchView3" pc="268437410" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="14" lineNum="197" parent="globals/IoTWatchView3" pc="268437422" symbol="calculatePlayerLoad"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="220" parent="globals/IoTWatchView3" pc="268437448" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="221" parent="globals/IoTWatchView3" pc="268437451" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="222" parent="globals/IoTWatchView3" pc="268437463" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="223" parent="globals/IoTWatchView3" pc="268437474" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="224" parent="globals/IoTWatchView3" pc="268437488" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="225" parent="globals/IoTWatchView3" pc="268437497" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="230" parent="globals/IoTWatchView3" pc="268437521" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="231" parent="globals/IoTWatchView3" pc="268437532" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="15" lineNum="235" parent="globals/IoTWatchView3" pc="268437549" symbol="updateSensorData"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="16" lineNum="429" parent="globals/IoTWatchView3" pc="268437578" symbol="onHide"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="16" lineNum="430" parent="globals/IoTWatchView3" pc="268437580" symbol="onHide"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="139" parent="globals/IoTWatchView3" pc="268437588" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="140" parent="globals/IoTWatchView3" pc="268437591" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="141" parent="globals/IoTWatchView3" pc="268437602" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="142" parent="globals/IoTWatchView3" pc="268437611" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="143" parent="globals/IoTWatchView3" pc="268437624" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="144" parent="globals/IoTWatchView3" pc="268437637" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="145" parent="globals/IoTWatchView3" pc="268437650" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="146" parent="globals/IoTWatchView3" pc="268437680" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="147" parent="globals/IoTWatchView3" pc="268437710" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="18" lineNum="148" parent="globals/IoTWatchView3" pc="268437740" symbol="accelCallback"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="43" parent="globals/IoTWatchView3" pc="268437751" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="44" parent="globals/IoTWatchView3" pc="268437753" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="45" parent="globals/IoTWatchView3" pc="268437765" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="46" parent="globals/IoTWatchView3" pc="268437789" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="47" parent="globals/IoTWatchView3" pc="268437802" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="48" parent="globals/IoTWatchView3" pc="268437826" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="49" parent="globals/IoTWatchView3" pc="268437833" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="52" parent="globals/IoTWatchView3" pc="268437851" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="53" parent="globals/IoTWatchView3" pc="268437882" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="55" parent="globals/IoTWatchView3" pc="268437897" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="72" parent="globals/IoTWatchView3" pc="268437946" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="74" parent="globals/IoTWatchView3" pc="268437998" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="76" parent="globals/IoTWatchView3" pc="268438051" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="78" parent="globals/IoTWatchView3" pc="268438104" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="80" parent="globals/IoTWatchView3" pc="268438157" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="82" parent="globals/IoTWatchView3" pc="268438199" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="84" parent="globals/IoTWatchView3" pc="268438252" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="86" parent="globals/IoTWatchView3" pc="268438294" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="88" parent="globals/IoTWatchView3" pc="268438347" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="19" lineNum="91" parent="globals/IoTWatchView3" pc="268438400" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="382" parent="globals/IoTWatchView3" pc="268438416" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="384" parent="globals/IoTWatchView3" pc="268438419" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="385" parent="globals/IoTWatchView3" pc="268438432" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="386" parent="globals/IoTWatchView3" pc="268438440" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="388" parent="globals/IoTWatchView3" pc="268438457" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="389" parent="globals/IoTWatchView3" pc="268438469" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="391" parent="globals/IoTWatchView3" pc="268438481" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="392" parent="globals/IoTWatchView3" pc="268438484" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="394" parent="globals/IoTWatchView3" pc="268438497" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="395" parent="globals/IoTWatchView3" pc="268438507" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="397" parent="globals/IoTWatchView3" pc="268438532" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="400" parent="globals/IoTWatchView3" pc="268438554" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="401" parent="globals/IoTWatchView3" pc="268438580" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="402" parent="globals/IoTWatchView3" pc="268438609" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="403" parent="globals/IoTWatchView3" pc="268438640" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="408" parent="globals/IoTWatchView3" pc="268438653" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="409" parent="globals/IoTWatchView3" pc="268438660" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="410" parent="globals/IoTWatchView3" pc="268438663" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="411" parent="globals/IoTWatchView3" pc="268438670" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="412" parent="globals/IoTWatchView3" pc="268438686" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="413" parent="globals/IoTWatchView3" pc="268438704" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="414" parent="globals/IoTWatchView3" pc="268438721" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="417" parent="globals/IoTWatchView3" pc="268438749" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="418" parent="globals/IoTWatchView3" pc="268438756" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="421" parent="globals/IoTWatchView3" pc="268438766" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="422" parent="globals/IoTWatchView3" pc="268438789" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchView3.mc" id="20" lineNum="423" parent="globals/IoTWatchView3" pc="268438796" symbol="onUpdate"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="21" lineNum="12" parent="globals/IoTWatchApp3" pc="268438816" symbol="onStart"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="22" lineNum="23" parent="globals/IoTWatchApp3" pc="268438819" symbol="getInitialView"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="22" lineNum="24" parent="globals/IoTWatchApp3" pc="268438821" symbol="getInitialView"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="23" lineNum="7" parent="globals/IoTWatchApp3" pc="268438851" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="23" lineNum="8" parent="globals/IoTWatchApp3" pc="268438853" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="24" lineNum="16" parent="globals/IoTWatchApp3" pc="268438866" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="24" lineNum="17" parent="globals/IoTWatchApp3" pc="268438868" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" id="24" lineNum="18" parent="globals/IoTWatchApp3" pc="268438877" symbol="onStop"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="25" lineNum="12" parent="globals/Rez/Drawables/mainbg" pc="268438893" symbol="&lt;init&gt;"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="26" lineNum="33" parent="globals/Rez/Layouts" pc="268438905" symbol="MainLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="26" lineNum="34" parent="globals/Rez/Layouts" pc="268438916" symbol="MainLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="26" lineNum="35" parent="globals/Rez/Layouts" pc="268438950" symbol="MainLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="26" lineNum="36" parent="globals/Rez/Layouts" pc="268438960" symbol="MainLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="26" lineNum="39" parent="globals/Rez/Layouts" pc="268438976" symbol="MainLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="26" lineNum="40" parent="globals/Rez/Layouts" pc="268439063" symbol="MainLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="26" lineNum="42" parent="globals/Rez/Layouts" pc="268439105" symbol="MainLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="26" lineNum="44" parent="globals/Rez/Layouts" pc="268439191" symbol="MainLayout"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="27" lineNum="14" parent="globals/Rez/Drawables/mainbg" pc="268439211" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="27" lineNum="15" parent="globals/Rez/Drawables/mainbg" pc="268439213" symbol="initialize"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="28" lineNum="18" parent="globals/Rez/Drawables/mainbg" pc="268439230" symbol="draw"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="28" lineNum="19" parent="globals/Rez/Drawables/mainbg" pc="268439232" symbol="draw"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="28" lineNum="20" parent="globals/Rez/Drawables/mainbg" pc="268439242" symbol="draw"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="28" lineNum="21" parent="globals/Rez/Drawables/mainbg" pc="268439252" symbol="draw"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="28" lineNum="25" parent="globals/Rez/Drawables/mainbg" pc="268439259" symbol="draw"/>
+        <entry filename="/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/bin/gen/006-B4115-00/source/Rez.mcgen" id="28" lineNum="27" parent="globals/Rez/Drawables/mainbg" pc="268439276" symbol="draw"/>
+    </pcToLineNum>
+    <symbolTable>
+        <entry field="true" id="33" symbol="playerLoad"/>
+        <entry id="8388639" module="true" symbol="Graphics"/>
+        <entry id="53" symbol="accumulated_distance"/>
+        <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
+        <entry id="8389849" symbol="units"/>
+        <entry id="8388638" module="true" symbol="ActivityRecording"/>
+        <entry id="28" method="true" symbol="generateSessionId"/>
+        <entry id="51" method="true" symbol="MainLayout"/>
+        <entry field="true" id="44" symbol="url"/>
+        <entry id="15" method="true" symbol="calculatePlayerLoad"/>
+        <entry field="true" id="8388890" symbol="sport"/>
+        <entry field="true" id="8389310" symbol="position"/>
+        <entry id="6" object="true" symbol="IoTWatchApp3"/>
+        <entry field="true" id="22" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldHeartRate&gt;"/>
+        <entry id="30" method="true" symbol="onPosition"/>
+        <entry field="true" id="29" symbol="numericUnitId"/>
+        <entry field="true" id="23" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldLatitude&gt;"/>
+        <entry field="true" id="8388611" module="true" symbol="Toybox"/>
+        <entry field="true" id="25" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldPlayerLoad&gt;"/>
+        <entry field="true" id="18" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitField&gt;"/>
+        <entry id="16" method="true" symbol="collectData"/>
+        <entry id="37" method="true" symbol="removeAlphabets"/>
+        <entry field="true" id="52" symbol="AppName"/>
+        <entry id="5" module="true" symbol="globals/Rez/Strings"/>
+        <entry id="8389594" symbol="headers"/>
+        <entry id="8389345" symbol="rezId"/>
+        <entry id="8388648" module="true" symbol="WatchUi"/>
+        <entry id="2" module="true" symbol="globals/Rez"/>
+        <entry id="43" method="true" symbol="updateSensorData"/>
+        <entry field="true" id="49" symbol="id_monkey"/>
+        <entry field="true" id="8388959" symbol="cadence"/>
+        <entry id="8389124" method="true" symbol="onUpdate"/>
+        <entry field="true" id="8389065" symbol="locY"/>
+        <entry field="true" id="8389064" symbol="locX"/>
+        <entry field="true" id="8" symbol="&lt;globals/IoTWatchView3/&lt;&gt;_UUID&gt;"/>
+        <entry id="8388771" module="true" object="true" symbol="Drawables"/>
+        <entry field="true" id="8389314" symbol="latitude"/>
+        <entry id="8389348" symbol="font"/>
+        <entry id="4" module="true" symbol="globals/Rez/Layouts"/>
+        <entry field="true" id="8391300" method="true" symbol="isVisible"/>
+        <entry id="50" object="true" symbol="mainbg"/>
+        <entry id="8389122" method="true" symbol="onLayout"/>
+        <entry field="true" id="8388738" symbol="currentSpeed"/>
+        <entry field="true" id="8389063" symbol="identifier"/>
+        <entry id="8389349" symbol="justification"/>
+        <entry field="true" id="8390134" symbol="sampleRate"/>
+        <entry field="true" id="39" symbol="sensorTimer"/>
+        <entry id="8390648" symbol="accelerometer"/>
+        <entry field="true" id="8390655" symbol="heartBeatIntervals"/>
+        <entry field="true" id="8388911" symbol="distance"/>
+        <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
+        <entry id="45" method="true" symbol="writeToFitFile"/>
+        <entry id="11" method="true" symbol="accelCallback"/>
+        <entry id="8389844" symbol="responseType"/>
+        <entry field="true" id="8390077" symbol="accelerometerData"/>
+        <entry field="true" id="8390438" symbol="enabled"/>
+        <entry id="8388786" method="true" symbol="method"/>
+        <entry id="8388644" module="true" symbol="System"/>
+        <entry field="true" id="8389315" symbol="longitude"/>
+        <entry field="true" id="42" symbol="unitId"/>
+        <entry field="true" id="41" symbol="sessionId"/>
+        <entry field="true" id="21" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldCadence&gt;"/>
+        <entry id="8388769" module="true" object="true" symbol="Rez"/>
+        <entry field="true" id="24" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldLongitude&gt;"/>
+        <entry id="31" method="true" symbol="onReceive"/>
+        <entry id="8388640" module="true" symbol="Lang"/>
+        <entry id="8389068" method="true" symbol="draw"/>
+        <entry field="true" id="48" symbol="LauncherIcon"/>
+        <entry id="8388610" symbol="statics"/>
+        <entry id="8389123" method="true" symbol="onShow"/>
+        <entry field="true" id="20" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldAccMin&gt;"/>
+        <entry field="true" id="17" symbol="dataBatch"/>
+        <entry id="8388643" module="true" symbol="Sensor"/>
+        <entry field="true" id="26" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldSessionID&gt;"/>
+        <entry field="true" id="10" symbol="acc_min"/>
+        <entry id="8389350" module="true" symbol="globals"/>
+        <entry id="8388770" module="true" object="true" symbol="Strings"/>
+        <entry field="true" id="36" symbol="prev_accel_z"/>
+        <entry field="true" id="8388960" symbol="heartRate"/>
+        <entry field="true" id="35" symbol="prev_accel_y"/>
+        <entry field="true" id="34" symbol="prev_accel_x"/>
+        <entry id="8388702" method="true" symbol="initialize"/>
+        <entry field="true" id="9" symbol="acc_max"/>
+        <entry id="8389279" method="true" symbol="onStart"/>
+        <entry field="true" id="8388891" symbol="subSport"/>
+        <entry field="true" id="47" symbol="view"/>
+        <entry field="true" id="8388892" symbol="name"/>
+        <entry id="8389808" symbol="period"/>
+        <entry id="8388641" module="true" symbol="Math"/>
+        <entry id="8389280" method="true" symbol="getInitialView"/>
+        <entry id="8389281" method="true" symbol="onStop"/>
+        <entry id="38" method="true" symbol="sendDataBatch"/>
+        <entry id="8389847" symbol="mesgType"/>
+        <entry id="8389347" symbol="color"/>
+        <entry id="14" symbol="accel_z"/>
+        <entry id="13" symbol="accel_y"/>
+        <entry id="12" symbol="accel_x"/>
+        <entry id="8388646" module="true" object="true" symbol="Timer"/>
+        <entry id="46" module="true" symbol="Layouts"/>
+        <entry field="true" id="19" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldAccMax&gt;"/>
+        <entry id="8388642" module="true" symbol="Position"/>
+        <entry id="7" object="true" symbol="IoTWatchView3"/>
+        <entry field="true" id="32" symbol="phone"/>
+        <entry id="8389125" method="true" symbol="onHide"/>
+        <entry field="true" id="40" symbol="session"/>
+        <entry id="8388635" module="true" symbol="Application"/>
+        <entry field="true" id="27" symbol="&lt;globals/IoTWatchView3/&lt;&gt;fitFieldUnitID&gt;"/>
+    </symbolTable>
+    <localVars>
+        <entry arg="true" endPc="268435652" name="info" stackId="1" startPc="268435586"/>
+        <entry endPc="268435648" name="location" stackId="2" startPc="268435611"/>
+        <entry endPc="268435825" name="params" stackId="1" startPc="268435672"/>
+        <entry endPc="268435825" name="headers" stackId="2" startPc="268435672"/>
+        <entry endPc="268435825" name="options" stackId="3" startPc="268435672"/>
+        <entry endPc="268435990" name="options" stackId="1" startPc="268435851"/>
+        <entry endPc="268435985" name="e" stackId="2" startPc="268435955"/>
+        <entry endPc="268436309" name="enhancedSpeed" stackId="1" startPc="268435995"/>
+        <entry endPc="268436309" name="activityInfo" stackId="2" startPc="268435995"/>
+        <entry endPc="268436309" name="data" stackId="3" startPc="268435995"/>
+        <entry endPc="268436309" name="currentTime" stackId="4" startPc="268435995"/>
+        <entry endPc="268436309" name="timeString" stackId="5" startPc="268435995"/>
+        <entry arg="true" endPc="268436510" name="dc" stackId="1" startPc="268436475"/>
+        <entry arg="true" endPc="268436635" name="responseCode" stackId="1" startPc="268436511"/>
+        <entry arg="true" endPc="268436635" name="data" stackId="2" startPc="268436511"/>
+        <entry arg="true" endPc="268436990" name="str" stackId="1" startPc="268436858"/>
+        <entry endPc="268436990" name="result" stackId="2" startPc="268436861"/>
+        <entry endPc="268436990" name="numericChars" stackId="3" startPc="268436861"/>
+        <entry endPc="268436949" name="i" stackId="4" startPc="268436887"/>
+        <entry endPc="268436939" name="char" stackId="5" startPc="268436887"/>
+        <entry endPc="268437039" name="time" stackId="1" startPc="268436994"/>
+        <entry endPc="268437039" name="random" stackId="2" startPc="268436994"/>
+        <entry endPc="268437446" name="sampleCount" stackId="1" startPc="268437043"/>
+        <entry endPc="268437446" name="isFirstSample" stackId="2" startPc="268437043"/>
+        <entry endPc="268437446" name="i" stackId="3" startPc="268437101"/>
+        <entry endPc="268437436" name="combinedAcc" stackId="4" startPc="268437101"/>
+        <entry endPc="268437436" name="dx" stackId="5" startPc="268437101"/>
+        <entry endPc="268437436" name="dy" stackId="6" startPc="268437101"/>
+        <entry endPc="268437436" name="dz" stackId="7" startPc="268437101"/>
+        <entry endPc="268437436" name="load" stackId="8" startPc="268437101"/>
+        <entry endPc="268437576" name="sensorInfo" stackId="1" startPc="268437451"/>
+        <entry arg="true" endPc="268437750" name="sensorData" stackId="1" startPc="268437588"/>
+        <entry endPc="268437746" name="accelData" stackId="2" startPc="268437602"/>
+        <entry arg="true" endPc="268438815" name="dc" stackId="1" startPc="268438416"/>
+        <entry endPc="268438814" name="x" stackId="2" startPc="268438419"/>
+        <entry endPc="268438814" name="y" stackId="3" startPc="268438419"/>
+        <entry endPc="268438814" name="font" stackId="4" startPc="268438419"/>
+        <entry endPc="268438814" name="textHeight" stackId="5" startPc="268438419"/>
+        <entry endPc="268438814" name="str" stackId="6" startPc="268438419"/>
+        <entry endPc="268438814" name="result" stackId="7" startPc="268438419"/>
+        <entry endPc="268438814" name="numericChars" stackId="8" startPc="268438419"/>
+        <entry endPc="268438748" name="i" stackId="9" startPc="268438686"/>
+        <entry endPc="268438738" name="char" stackId="10" startPc="268438686"/>
+        <entry arg="true" endPc="268438892" name="state" stackId="1" startPc="268438866"/>
+        <entry arg="true" endPc="268439210" name="dc" stackId="1" startPc="268438905"/>
+        <entry endPc="268439210" name="rez_cmp_local_custom_drawable_mainbg" stackId="2" startPc="268438916"/>
+        <entry endPc="268439210" name="rez_cmp_local_bitmap_id_monkey" stackId="3" startPc="268438916"/>
+        <entry endPc="268439210" name="rez_cmp_local_text_id_UUID" stackId="4" startPc="268438916"/>
+        <entry arg="true" endPc="268439294" name="dc" stackId="1" startPc="268439230"/>
+    </localVars>
+    <deviceInfo deviceVersion="d768f42b362bd6ce30dcbbc223d308fbb5a79106" partNumber="006-B4115-00"/>
+    <annotations>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="LauncherIcon"/>
+        <annotationEntry annotation="initialized" class="Strings" module="globals/Rez" symbol="AppName"/>
+        <annotationEntry annotation="initialized" class="Drawables" module="globals/Rez" symbol="id_monkey"/>
+    </annotations>
+    <dataEntryOffsetMappings>
+        <dataEntry label="globals" offset="58" parentId="" symbolId="globals" type="module"/>
+        <dataEntry label="globals/IoTWatchView3" offset="116" parentId="globals" symbolId="IoTWatchView3" type="class"/>
+        <dataEntry label="globals/Rez" offset="601" parentId="globals" symbolId="Rez" type="module"/>
+        <dataEntry label="globals/IoTWatchApp3" offset="654" parentId="globals" symbolId="IoTWatchApp3" type="class"/>
+        <dataEntry label="globals/Rez/Drawables" offset="734" parentId="Rez" symbolId="Drawables" type="module"/>
+        <dataEntry label="globals/Rez/Layouts" offset="787" parentId="Rez" symbolId="Layouts" type="module"/>
+        <dataEntry label="globals/Rez/Strings" offset="822" parentId="Rez" symbolId="Strings" type="module"/>
+        <dataEntry label="globals/Rez/Drawables/mainbg" offset="857" parentId="Drawables" symbolId="mainbg" type="class"/>
+    </dataEntryOffsetMappings>
+    <functions>
+        <functionEntry accessMode="public" endPc="268435553" name="&lt;init&gt;" parent="IoTWatchView3" startPc="268435460">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435573" name="&lt;init&gt;" parent="Rez" startPc="268435554">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435585" name="&lt;init&gt;" parent="IoTWatchApp3" startPc="268435574">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435652" name="onPosition" parent="IoTWatchView3" startPc="268435586">
+            <param id="info"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435847" name="sendDataBatch" parent="IoTWatchView3" startPc="268435653">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268435991" name="onStart" parent="IoTWatchView3" startPc="268435848">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436310" name="collectData" parent="IoTWatchView3" startPc="268435992">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436474" name="onStop" parent="IoTWatchView3" startPc="268436311">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436510" name="onLayout" parent="IoTWatchView3" startPc="268436475">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436635" name="onReceive" parent="IoTWatchView3" startPc="268436511">
+            <param id="responseCode"/>
+            <param id="data"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436857" name="writeToFitFile" parent="IoTWatchView3" startPc="268436636">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268436990" name="removeAlphabets" parent="IoTWatchView3" startPc="268436858">
+            <param id="str"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437039" name="generateSessionId" parent="IoTWatchView3" startPc="268436991">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437447" name="calculatePlayerLoad" parent="IoTWatchView3" startPc="268437040">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437577" name="updateSensorData" parent="IoTWatchView3" startPc="268437448">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437587" name="onHide" parent="IoTWatchView3" startPc="268437578">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="onShow" parent="IoTWatchView3">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268437750" name="accelCallback" parent="IoTWatchView3" startPc="268437588">
+            <param id="sensorData"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438415" name="initialize" parent="IoTWatchView3" startPc="268437751">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438815" name="onUpdate" parent="IoTWatchView3" startPc="268438416">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Drawables">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Layouts">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" name="&lt;init&gt;" parent="Strings">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438818" name="onStart" parent="IoTWatchApp3" startPc="268438816">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438850" name="getInitialView" parent="IoTWatchApp3" startPc="268438819">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438865" name="initialize" parent="IoTWatchApp3" startPc="268438851">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438892" name="onStop" parent="IoTWatchApp3" startPc="268438866">
+            <param id="state"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268438904" name="&lt;init&gt;" parent="mainbg" startPc="268438893">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439210" name="MainLayout" parent="Layouts" startPc="268438905">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439229" name="initialize" parent="mainbg" startPc="268439211">
+            <documentation/>
+        </functionEntry>
+        <functionEntry accessMode="public" endPc="268439294" name="draw" parent="mainbg" startPc="268439230">
+            <param id="dc"/>
+            <documentation/>
+        </functionEntry>
+    </functions>
+</debugInfo>

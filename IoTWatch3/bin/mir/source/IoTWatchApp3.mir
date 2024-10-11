@@ -1,0 +1,64 @@
+[ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 1; ]
+using Toybox.Application;
+[ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 2; ]
+using Toybox.WatchUi;
+[ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 4; ]
+class IoTWatchApp3 extends Application.AppBase{
+    [ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 4; ]
+    <init> {
+    }
+    [ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 4; ]
+    static
+    <init> {
+    }
+    [ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 5; @position = 8; ]
+    var view;
+    [ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 7; ]
+    function initialize() as Void {
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_7_26_9_4_start:
+[ "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" 8 8 ]
+        %tmp.2 = getv ? :AppBase;
+        %tmp.3 = getv function %tmp.2 :initialize;
+        invoke %tmp.2 %tmp.3();
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_7_26_9_4_stop:
+    }
+    [ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 12; ]
+    function onStart(state) {
+    }
+    [ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 16; ]
+    function onStop(state) {
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_16_27_20_4_start:
+[ "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" 17 8 ]
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_17_8_19_8_if_stmt:
+        %tmp.2 = getv ? :view;
+        %tmp.3 = null;
+        %tmp.4 = ne %tmp.2 %tmp.3;
+        bf %tmp.4 @_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_17_8_19_8_if_end;
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_17_8_19_8_if_true:
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_17_26_19_8_start:
+[ "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" 18 12 ]
+        %tmp.6 = getv ? :view;
+        %tmp.7 = as %tmp.6 { (!Null) };
+        %tmp.8 = getv function %tmp.7 :onStop;
+        invoke %tmp.7 %tmp.8();
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_17_26_19_8_stop:
+        goto @_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_17_8_19_8_if_end;
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_17_8_19_8_if_end:
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_16_27_20_4_stop:
+    }
+    [ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 23; ]
+    function getInitialView() {
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_23_30_25_4_start:
+[ "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc" 24 8 ]
+        %tmp.1 = newa 1;
+        %tmp.5 = getv ? :IoTWatchView3;
+        %tmp.2 = newc %tmp.5 ();
+        %tmp.6 = dup %tmp.1;
+        %tmp.7 = aputv %tmp.6 0 %tmp.2;
+        ret %tmp.7;
+_Users_GIGABYTE_Documents_Garmin_ConnectIQ_Watch_IoT_IoTWatch3_source_IoTWatchApp3_mc_23_30_25_4_stop:
+    }
+}
+[ @file = "/Users/GIGABYTE/Documents/Garmin/ConnectIQ-Watch-IoT/IoTWatch3/source/IoTWatchApp3.mc"; @line = 1; ]
+<init> {
+}
